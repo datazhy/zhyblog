@@ -10,6 +10,6 @@
 
 # 推送
 git status 
-git add .
-git commit -m "add yml file"
-git push
+git add . 
+git commit -m "add yml file" 
+git push 
