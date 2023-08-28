@@ -7,3 +7,13 @@
 #### [View Live Hux Blog &rarr;](http://huangxuan.me)
 
 ## If you like Hux Blog, Please star [huxpro.github.io repo](https://github.com/Huxpro/huxpro.github.io) instead of this! Thank you!
+
+# 推送
+git status
+
+git add .
+
+git commit -m "add yml file"
+
+git push
+
