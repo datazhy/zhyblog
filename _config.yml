@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: datazhy@gmail.com
 description: ""
 keyword: ""
-url: "http://zhy.win"              # your host, for absolute URL
+url: "http://huangxuan.me"              # your host, for absolute URL
 baseurl: "/blog"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
