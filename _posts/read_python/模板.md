@@ -5,6 +5,7 @@ layout: post
 author: "Hux"
 header-style: text
 hidden: true
+published: false
 tags:
   - LF (逻辑基础)
   - SF (软件基础)
