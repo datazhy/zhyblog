@@ -7,6 +7,7 @@ description: "这里是 @Zhy张航宇 的个人博客，与你一起发现更大
 keyword: "张航宇, Zhy张航宇, Zhy, IT, datazhy, @datazhy, 张航宇的博客, Zhy Blog, 博客, 个人网站, 互联网, Python, R, SQL, PowerBI"
 url: "https://zhy.win" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
+lang: zh-CN # site language, used in <html lang="">, override per-page with `lang:` in front matter
 
 # Publish posts or collection documents with a future date.
 future: true
@@ -41,7 +42,7 @@ anchorjs: true # if you want to customize anchor. check out line:181 of `post.ht
 # from PR#40, to support local preview for Jekyll 3.0
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-sitemap]
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -67,9 +68,11 @@ netease_comment: false
 # Baidu Analytics
 # ba_track_id: [your track id]
 
-# Google Analytics
-ga_track_id: "G-4EP3T98XND" # Format: UA-xxxxxx-xx
-ga_domain: zhy.win
+# Google Analytics (GA4)
+# 注意：GA4 的 gtag.js 已直接写在 _includes/head.html 中；
+# 旧版 analytics.js 加载逻辑已移除（不兼容 G- 开头的 GA4 ID）。
+# ga_track_id: "G-4EP3T98XND"
+# ga_domain: zhy.win
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.

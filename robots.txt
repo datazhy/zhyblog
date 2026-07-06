@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pwa/
+
+Sitemap: https://zhy.win/sitemap.xml
