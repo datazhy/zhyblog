@@ -12,17 +12,41 @@
                     2022 ～ {{ site.time | date: '%Y' }}
                 </p>
 
-                <!-- 访客计数（不蒜子/Vercount 兼容）。计数未加载出来前整行隐藏，服务不可用则优雅降级 -->
-                <p class="copyright text-muted" id="busuanzi_container_site_uv" style="display: none;">
-                    👀 你是第 <span id="busuanzi_value_site_uv"></span> 位访客 · 本站累计访问 <span id="busuanzi_value_site_pv"></span> 次
+                <!-- 访客计数（不蒜子/Vercount 兼容）。外层 p 保持居中；内层 container 会被脚本设为 inline 显示，
+                     未加载出来前隐藏，服务不可用则整行不显示（优雅降级） -->
+                <p class="copyright text-muted">
+                    <span id="busuanzi_container_site_uv" style="display: none;">
+                        👀 你是第 <span id="busuanzi_value_site_uv"></span> 位访客 · 本站累计访问 <span id="busuanzi_value_site_pv"></span> 次
+                    </span>
                 </p>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- 访客计数脚本 Vercount（不蒜子兼容，稳定替代）。若需自定义起始数，可在 vercount.one 后台设置 -->
+<!-- 访客计数脚本 Vercount（不蒜子兼容，稳定替代） -->
 <script defer src="https://events.vercount.one/js"></script>
+<!-- 显示偏移：Vercount 后端真实计数从 0 起，前端叠加 10 万让展示从 100000 起步 -->
+<script>
+    (function () {
+        var BASE = 100000;
+        var ids = ['busuanzi_value_site_uv', 'busuanzi_value_site_pv'];
+        var tries = 0;
+        var timer = setInterval(function () {
+            tries++;
+            var allDone = true;
+            ids.forEach(function (id) {
+                var el = document.getElementById(id);
+                if (!el || el.dataset.offset) return;
+                var raw = (el.textContent || '').replace(/[^0-9]/g, '');
+                if (raw === '') { allDone = false; return; }
+                el.textContent = (parseInt(raw, 10) + BASE).toLocaleString('en-US');
+                el.dataset.offset = '1';
+            });
+            if (allDone || tries > 80) clearInterval(timer);
+        }, 100);
+    })();
+</script>
 
 <!-- jQuery -->
 <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
