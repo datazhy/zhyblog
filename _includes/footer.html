@@ -11,10 +11,18 @@
                     <br>
                     2022 ～ {{ site.time | date: '%Y' }}
                 </p>
+
+                <!-- 访客计数（不蒜子/Vercount 兼容）。计数未加载出来前整行隐藏，服务不可用则优雅降级 -->
+                <p class="copyright text-muted" id="busuanzi_container_site_uv" style="display: none;">
+                    👀 你是第 <span id="busuanzi_value_site_uv"></span> 位访客 · 本站累计访问 <span id="busuanzi_value_site_pv"></span> 次
+                </p>
             </div>
         </div>
     </div>
 </footer>
+
+<!-- 访客计数脚本 Vercount（不蒜子兼容，稳定替代）。若需自定义起始数，可在 vercount.one 后台设置 -->
+<script defer src="https://events.vercount.one/js"></script>
 
 <!-- jQuery -->
 <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
