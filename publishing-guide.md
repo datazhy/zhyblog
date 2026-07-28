@@ -119,6 +119,13 @@ bundle exec jekyll serve
 **Q：文章根本不显示 / 排序不对？**
 → 十有八九是文件名格式不对。必须是 `YYYY-MM-DD-标题.md`，日期要合法。
 
+**Q：推送成功了，但 Cloudflare 构建失败、网站停在旧版本？**
+→ ⚠️ **不要在仓库根目录放中文文件名。** 曾因为根目录多了个 `发布文章教程.md`，
+Cloudflare 构建直接报 `incompatible character encodings: BINARY and UTF-8` 而失败
+（Jekyll 在非 UTF-8 环境下处理根目录中文路径会崩）。改成英文名后立刻恢复。
+`_posts/` 目录里的中文文件名反而没问题，只有**根目录**要避开。
+→ 另外记住：**`git push` 成功 ≠ 网站更新成功**。构建一旦失败，线上会保持上一次成功的版本。
+
 **Q：想先写草稿、暂不发布？**
 → 在 Front Matter 里加一行 `published: false`，它就不会出现在网站上；想发布时删掉这行或改成 `true`。
 
