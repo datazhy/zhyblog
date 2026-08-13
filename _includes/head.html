@@ -82,7 +82,10 @@
     <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
+    <link rel="icon" href="{{ site.baseurl }}/img/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/img/logo/zhy-mark.svg">
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/img/logo/mark-180.png">
+    <meta name="theme-color" content="#1A1A1A">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -100,6 +103,26 @@
         .intro-header .site-heading .subheading {
             color: #fff;
             text-shadow: 0 0 4px rgba(0, 0, 0, .9), 0 1px 6px rgba(0, 0, 0, .75);
+        }
+
+        /* 导航栏 zhy 字标：笔画用 currentColor，自动跟随深/浅两种导航栏配色 */
+        .navbar-custom .navbar-brand.brand-logo {
+            display: flex;
+            align-items: center;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .navbar-custom .navbar-brand .brand-mark {
+            height: 28px;
+            width: 38px;
+            display: block;
+            overflow: visible;
+            transition: opacity .2s ease;
+        }
+
+        .navbar-custom .navbar-brand:hover .brand-mark {
+            opacity: .78;
         }
     </style>
 
