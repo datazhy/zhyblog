@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /pwa/
 
-Sitemap: https://zhy.win/sitemap.xml
+Sitemap: https://zhanghangyu.com/sitemap.xml
