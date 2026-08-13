@@ -26,11 +26,15 @@
 
 <!-- 访客计数脚本 Vercount（不蒜子兼容，稳定替代） -->
 <script defer src="https://events.vercount.one/js"></script>
-<!-- 显示偏移：Vercount 后端真实计数从 0 起，前端叠加 1 万让展示从 10000 起步 -->
+<!-- 显示偏移：Vercount 后端真实计数从 0 起，前端叠加基数。
+     访客(UV)与访问(PV)用不同基数，让「访问」始终明显多于「访客」，比例更自然。 -->
 <script>
     (function () {
-        var BASE = 10000;
-        var ids = ['busuanzi_value_site_uv', 'busuanzi_value_site_pv'];
+        var BASES = {
+            'busuanzi_value_site_uv': 10000,
+            'busuanzi_value_site_pv': 25000
+        };
+        var ids = Object.keys(BASES);
         var tries = 0;
         var timer = setInterval(function () {
             tries++;
@@ -40,7 +44,7 @@
                 if (!el || el.dataset.offset) return;
                 var raw = (el.textContent || '').replace(/[^0-9]/g, '');
                 if (raw === '') { allDone = false; return; }
-                el.textContent = (parseInt(raw, 10) + BASE).toLocaleString('en-US');
+                el.textContent = (parseInt(raw, 10) + BASES[id]).toLocaleString('en-US');
                 el.dataset.offset = '1';
             });
             if (allDone || tries > 80) clearInterval(timer);
