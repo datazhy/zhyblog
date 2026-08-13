@@ -26,10 +26,10 @@
 
 <!-- 访客计数脚本 Vercount（不蒜子兼容，稳定替代） -->
 <script defer src="https://events.vercount.one/js"></script>
-<!-- 显示偏移：Vercount 后端真实计数从 0 起，前端叠加 10 万让展示从 100000 起步 -->
+<!-- 显示偏移：Vercount 后端真实计数从 0 起，前端叠加 1 万让展示从 10000 起步 -->
 <script>
     (function () {
-        var BASE = 100000;
+        var BASE = 10000;
         var ids = ['busuanzi_value_site_uv', 'busuanzi_value_site_pv'];
         var tries = 0;
         var timer = setInterval(function () {
