@@ -69,6 +69,23 @@
 {% if site.service-worker %}
 <script src="{{ "/js/snackbar.js " | prepend: site.baseurl }}"></script>
 <script src="{{ "/js/sw-registration.js " | prepend: site.baseurl }}"></script>
+{% else %}
+<!-- 本站已停用 Service Worker。以下代码负责注销老访客浏览器里残留的旧 SW
+     并清空其缓存，否则他们会长期看到缓存的旧版页面。
+     等历史缓存基本清理完毕后（约几个月），这段可以删除。 -->
+<script>
+    (function () {
+        if (!('serviceWorker' in navigator)) return;
+        navigator.serviceWorker.getRegistrations()
+            .then(function (rs) { rs.forEach(function (r) { r.unregister(); }); })
+            .catch(function () { });
+        if (window.caches && caches.keys) {
+            caches.keys()
+                .then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); })
+                .catch(function () { });
+        }
+    })();
+</script>
 {% endif %}
 
 <!-- async load function -->
