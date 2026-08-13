@@ -2,7 +2,7 @@
 
 本博客用 **Jekyll** 构建，代码托管在 GitHub（`datazhy/zhyblog`），由 **Cloudflare Pages** 自动部署。
 
-> **核心逻辑一句话**：你只要把写好的文章 `git push` 到 GitHub，Cloudflare 会自动构建并上线，1～2 分钟后 4 个域名（zhy.win / www.zhy.win / zhanghangyu.com / www.zhanghangyu.com）同步更新。**全程不需要手动部署。**
+> **核心逻辑一句话**：你只要把写好的文章 `git push` 到 GitHub，Cloudflare 会自动构建并上线，1～2 分钟后主域名 zhanghangyu.com 同步更新（zhy.win 为旧域名，301 跳转至此）。**全程不需要手动部署。**
 
 ---
 
@@ -77,9 +77,9 @@ git push
 
 ### 5. 查看效果
 
-打开 https://www.zhy.win 查看。
+打开 https://zhanghangyu.com 查看。
 
-> ⚠️ **看不到更新？** 本站是 PWA、带 Service Worker 缓存，浏览器可能给你旧页面。按 **`Cmd + Shift + R` 强制刷新**一两次即可。
+> ⚠️ **看不到更新？** 普通刷新即可（Service Worker 已停用，不再有缓存拦截）。
 
 ---
 
@@ -129,8 +129,8 @@ Cloudflare 构建直接报 `incompatible character encodings: BINARY and UTF-8` 
 **Q：想先写草稿、暂不发布？**
 → 在 Front Matter 里加一行 `published: false`，它就不会出现在网站上；想发布时删掉这行或改成 `true`。
 
-**Q：本地用 `curl` 测 zhy.win 结果不对？**
-→ 本机开了 WARP，会把 zhy.win 的 DNS 劫持到本地缓存，`curl` 结果不可信。以浏览器实际访问为准（强刷后）。
+**Q：本地用 `curl` 测站点结果不对？**
+→ 本机开了 WARP，会劫持本站域名的 DNS 到本地缓存，`curl` 结果不可信。以浏览器实际访问为准。
 
 ---
 
@@ -142,7 +142,7 @@ Cloudflare 构建直接报 `incompatible character encodings: BINARY and UTF-8` 
 git add .
 git commit -m "新增文章：xxx"
 git push
-# 3. 等 1-2 分钟，浏览器 Cmd+Shift+R 打开 https://www.zhy.win
+# 3. 等 1-2 分钟，浏览器打开 https://zhanghangyu.com
 ```
 
 ---
@@ -152,5 +152,5 @@ git push
 - **写作**：本地 `_posts/` 目录，Markdown 文件
 - **仓库**：GitHub `datazhy/zhyblog`，`main` 分支
 - **托管**：Cloudflare Pages 项目 `zhyblog`，监听 `main` 分支，push 即自动构建（`bundle install && bundle exec jekyll build` → `_site`）
-- **域名**：zhy.win、www.zhy.win、zhanghangyu.com、www.zhanghangyu.com（都指向 Cloudflare Pages）
+- **域名**：主域名 zhanghangyu.com（www 与旧域名 zhy.win / www.zhy.win 均 301 跳转至此）
 - **访客统计**：页脚的访客计数用 Vercount；另有 Umami、Google Analytics 做后台分析
