@@ -99,6 +99,19 @@ layout: default
 <!-- Artalk 评论（自托管，数据在自己服务器上）start -->
 <link rel="stylesheet" href="{{ site.artalk_server }}/dist/Artalk.css">
 <script src="{{ site.artalk_server }}/dist/Artalk.js"></script>
+<style>
+    /* 只保留「昵称」：隐藏邮箱与网址输入框。
+       后端强制要求邮箱（留空会返回 400），因此下方脚本按昵称自动生成一个占位邮箱。 */
+    #artalk-comment .atk-header [name="email"],
+    #artalk-comment .atk-header [name="link"] {
+        display: none !important;
+    }
+
+    /* 昵称独占一行，避免隐藏两个输入框后留下空档 */
+    #artalk-comment .atk-header [name="name"] {
+        width: 100%;
+    }
+</style>
 <script>
     Artalk.init({
         el: '#artalk-comment',
@@ -108,6 +121,51 @@ layout: default
         pageKey: '{{ page.url | prepend: site.url }}',
         pageTitle: {{ page.title | jsonify }}
     });
+
+    // 邮箱是后端必填项，但界面上已隐藏，这里按昵称自动生成一个稳定的占位邮箱。
+    // 用昵称做前缀（而非所有人共用一个），这样不同昵称仍是彼此独立的用户与头像。
+    (function () {
+        var SEL = '#artalk-comment .atk-header';
+
+        function fillEmail() {
+            var nameEl = document.querySelector(SEL + ' [name="name"]');
+            var mailEl = document.querySelector(SEL + ' [name="email"]');
+            if (!nameEl || !mailEl) return;
+
+            var nick = (nameEl.value || '').trim();
+            if (!nick) return;
+
+            // 取昵称的十六进制编码做本地部分，避免中文/空格/特殊字符导致邮箱非法
+            var local = Array.from(nick)
+                .map(function (c) { return c.codePointAt(0).toString(16); })
+                .join('')
+                .slice(0, 40);
+
+            var want = 'guest-' + local + '@zhy.win';
+            if (mailEl.value === want) return;
+
+            // 用原生 setter 赋值并派发事件，确保框架能感知到这次变更
+            var setter = Object.getOwnPropertyDescriptor(
+                window.HTMLInputElement.prototype, 'value').set;
+            setter.call(mailEl, want);
+            mailEl.dispatchEvent(new Event('input', { bubbles: true }));
+            mailEl.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+
+        // 编辑器是异步渲染的，且回复时会重建，故用事件委托 + 兜底轮询
+        document.addEventListener('input', function (e) {
+            if (e.target && e.target.matches(SEL + ' [name="name"]')) fillEmail();
+        }, true);
+
+        document.addEventListener('focusout', function (e) {
+            if (e.target && e.target.closest && e.target.closest(SEL)) fillEmail();
+        }, true);
+
+        // 提交前最后兜底（捕获阶段，早于 Artalk 自身的处理）
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.closest && e.target.closest('#artalk-comment .atk-send-btn')) fillEmail();
+        }, true);
+    })();
 </script>
 <!-- Artalk 评论 end -->
 {% endif %}
