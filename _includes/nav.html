@@ -35,12 +35,15 @@
                         <li>
                             <a href="{{ site.baseurl }}/">Home</a>
                         </li>
-                        {% for page in site.pages %}
-                        {% if page.title and page.hide-in-nav != true %}
+                        {% comment %}
+                            导航顺序由 front matter 的 nav-order 控制（未设置的排在最后）；
+                            导航文案优先用 nav-title，便于导航显示英文而页面标题保持中文。
+                        {% endcomment %}
+                        {% assign nav_pages = site.pages | where_exp: "p", "p.title" | where_exp: "p", "p.hide-in-nav != true" | sort: "nav-order" %}
+                        {% for page in nav_pages %}
                         <li>
-                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.nav-title | default: page.title }}</a>
                         </li>
-                        {% endif %}
                         {% endfor %}
                         <li class="search-icon">
                             <a href="javascript:void(0)">

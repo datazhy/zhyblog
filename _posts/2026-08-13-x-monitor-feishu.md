@@ -7,6 +7,7 @@ date:         2026-08-13 12:00:00
 author:       "Zhy"
 catalog:      true
 header-style: text
+cover:        /img/covers/x-monitor-feishu.png
 tags:
     - 开源
     - Python
@@ -171,3 +172,14 @@ HTTPS 证书由 Caddy 通过 **Cloudflare DNS-01** 自动签发和续期，监�
 如果你也有类似的需求（不一定是盯美股，追任何领域的 X 博主都适用），欢迎试试看，也欢迎提 Issue 和 PR：
 
 > **[github.com/datazhy/x-monitor-feishu](https://github.com/datazhy/x-monitor-feishu)**
+
+---
+
+## 相关资料
+
+1. [datazhy/x-monitor-feishu](https://github.com/datazhy/x-monitor-feishu) — 本项目源码（MIT）
+2. [TwitterAPI.io](https://twitterapi.io/) — 本文使用的第三方推文数据源，按量计费
+3. [DeepSeek 开放平台](https://platform.deepseek.com/) — 翻译、逐条分析与早报写作所用的 LLM
+
+文中成本数据来自我自己账户的实测账单（18 位博主、4 条规则、10 分钟检查间隔），
+不同配置下的费用会有明显差异。

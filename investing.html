@@ -1,0 +1,85 @@
+---
+layout: page
+title: "股票交易"
+nav-title: "INVESTING"
+nav-order: 20
+description: "美股投资研究与真实交易复盘：半导体、存储与 AI 基础设施的基本面与估值框架，以及仓位管理、分批止盈和交易纪律——包括做错的那些。"
+permalink: /investing/
+header-img: "img/home-bg.jpg"
+header-mask: 0.4
+---
+
+<div class="post-container">
+  <p>这里记录我的美股研究、真实持仓和交易复盘。</p>
+
+  <p>
+    做了几年之后我逐渐相信一件事：<strong>选股决定你能赚多少，仓位决定你能不能活下来。</strong>
+    所以这里的内容分成两半——一半是<strong>看什么</strong>，一半是<strong>怎么做</strong>。
+  </p>
+
+  <hr>
+
+  <h2>一、投资研究</h2>
+
+  <p>主要关注方向：</p>
+
+  <ul>
+    <li><strong>半导体</strong> —— 存储、逻辑、设备</li>
+    <li><strong>AI 基础设施</strong> —— 数据中心、算力与存储配套</li>
+    <li><strong>高成长科技股</strong> —— 商业模式与估值框架的变化</li>
+  </ul>
+
+  <p>
+    研究类文章关注公司基本面、行业周期和估值逻辑。我更在意的不是"目标价多少"，
+    而是<strong>市场用哪一套框架给它定价，以及这套框架什么时候会变</strong>。
+  </p>
+
+  <h2>二、交易系统</h2>
+
+  <p>
+    大部分亏损不是因为看错了方向，而是因为仓位、买卖执行和情绪管理出了问题。
+    这部分记录的是<strong>方法</strong>，不是标的：
+  </p>
+
+  <ul>
+    <li><strong>仓位管理</strong> —— 核心仓与事件仓的区分、单一标的的比例上限</li>
+    <li><strong>买卖执行</strong> —— 分批建仓、分批止盈，以及为什么不要试图卖在最高点</li>
+    <li><strong>趋势判断</strong> —— 什么信号算真的转弱，什么只是噪音</li>
+    <li><strong>交易纪律</strong> —— 规则怎么定，以及怎么防止自己临场破例</li>
+  </ul>
+
+  <p>
+    我尽量把每条规则的<strong>来源</strong>写清楚——它是从哪次交易、哪个错误里长出来的。
+    脱离具体情境的交易格言没什么用。
+  </p>
+
+  <p>
+    我尤其愿意写"方向判断对了但执行错了"这种复盘。股价会过期，
+    但<strong>为什么做出那个决定</strong>不会。
+  </p>
+
+  <hr>
+
+  <h2>全部文章</h2>
+
+  {% assign inv_posts = site.posts | where_exp: "p", "p.tags contains '美股' or p.tags contains '投资复盘' or p.tags contains '交易系统'" %}
+
+  {% if inv_posts.size > 0 %}
+  <ul class="post-list-simple">
+    {% for post in inv_posts %}
+    <li style="margin-bottom: 1.4em;">
+      <a href="{{ post.url | prepend: site.baseurl }}"><strong>{{ post.title }}</strong></a><br>
+      {% if post.subtitle %}<span style="color:#999;">{{ post.subtitle }}</span><br>{% endif %}
+      <span style="color:#bbb; font-size: 0.9em;">{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p style="color:#999;">还没有文章。</p>
+  {% endif %}
+
+  <p style="color:#999; font-size:0.92em; margin-top:2em;">
+    投资相关文章记录的是我本人的研究、判断与真实交易，<strong>不构成投资建议</strong>。
+    详见<a href="{{ '/about/' | prepend: site.baseurl }}">关于我</a>。
+  </p>
+</div>

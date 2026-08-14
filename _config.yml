@@ -1,10 +1,14 @@
 # Site settings
 title: Zhy Blog
-SEOTitle: 张航宇的博客 | Zhy Blog
+# brandName：文章页标题后缀，保持简短。首页/站点级标题用 SEOTitle。
+brandName: 张航宇的博客
+SEOTitle: 张航宇的博客｜美股投资、交易系统与 AI 自动化
+authorName: 张航宇
+authorAltName: Zhy
 header-img: img/home-bg.jpg
 email: datazhy@gmail.com
-description: "这里是 @Zhy张航宇 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
-keyword: "张航宇, Zhy张航宇, Zhy, IT, datazhy, @datazhy, 张航宇的博客, Zhy Blog, 博客, 个人网站, 互联网, Python, R, SQL, PowerBI"
+description: "张航宇的个人博客，记录美股投资研究、真实交易复盘、仓位与风险管理、交易系统迭代，以及 AI 自动化、Python、自托管和数据分析实践。"
+keyword: "张航宇, Zhy张航宇, Zhy, datazhy, 张航宇的博客, Zhy Blog, 美股投资, 交易系统, 投资复盘, 仓位管理, 半导体, AI 自动化, Python, 数据分析"
 url: "https://zhanghangyu.com" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 lang: zh-CN # site language, used in <html lang="">, override per-page with `lang:` in front matter
@@ -82,7 +86,16 @@ sidebar-avatar: https://github.com/datazhy.png # use absolute URL, seeing it's u
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags
-featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 1 # 回退规则：标签文章数需大于此值才展示
+# 策展顺序：按此顺序优先展示，且只渲染真实存在文章的标签（不制造空分类）。
+# 留空则回退到上面的 featured-condition-size 阈值逻辑。
+featured-tags-order:
+  - 美股
+  - 投资复盘
+  - 交易系统
+  - 半导体
+  - AI
+  - Python
 
 # Progressive Web Apps
 # 已停用：静态博客不需要离线缓存，且 SW 的 stale-while-revalidate 会让更新延迟一轮生效

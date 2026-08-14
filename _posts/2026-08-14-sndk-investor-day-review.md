@@ -1,17 +1,20 @@
 ---
 layout:       post
-title:        "不要试图卖在最高点"
-subtitle:     "一次 SNDK 交易的完整复盘：从估值框架切换，到分批止盈的执行纪律"
-description:  "SNDK 的 Investor Day 让市场开始把它从「周期股」重新定价为「可预测现金流公司」。这篇记录我在这轮行情里的实际操作、事后复盘，以及从中沉淀出来的分批止盈规则。"
+title:        "SNDK Investor Day 2026 复盘：估值重估与分批止盈"
+subtitle:     "不要试图卖在最高点——一次 SNDK 交易的完整复盘"
+description:  "2026 年 SNDK（Sandisk）Investor Day 完整复盘：分析 NBM 长期协议、AI 数据中心需求与估值框架变化，并复盘实际持仓中事件仓的分批止盈、5 分钟趋势判断和仓位管理。"
 date:         2026-08-14 12:00:00
 author:       "Zhy"
 catalog:      true
 header-style: text
+cover:        /img/covers/sndk-investor-day-2026.png
 tags:
+    - SNDK
+    - 美股
     - 投资复盘
     - 交易系统
     - 仓位管理
-    - 美股
+    - 半导体
 ---
 
 ## 先说结论
@@ -221,6 +224,19 @@ $1,516  最低
 **交易纪律：**
 
 > 不满仓、不追情绪、不猜顶部、不因一根阴线卖出；所有买入分批，所有卖出分批，事件仓看 5 分钟趋势，核心仓看日线和基本面。
+
+---
+
+## 数据与资料来源
+
+本文引用的财务数据与合同信息，来自 Sandisk 官方投资者关系渠道：
+
+1. [Sandisk Corporation — Investor Relations](https://investor.sandisk.com/) — 财报、Investor Day 材料与新闻稿
+2. [Sandisk — News Releases](https://investor.sandisk.com/news-events/news-releases) — 季度业绩公告原文
+3. [Sandisk — Investor FAQs](https://investor.sandisk.com/ir-resources/investor-faqs) — 公司基本信息与股票代码说明
+4. [SEC EDGAR — Sandisk Corporation 备案文件](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002023554&type=10-Q&dateb=&owner=include&count=40) — 10-Q / 10-K 原始备案
+
+盘中价格区间为公开行情数据。文中涉及本人持仓的部分已做脱敏处理。
 
 ---
 

@@ -9,6 +9,18 @@
     {% endif %}
     <h5><a href="{{'/archive/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
     <div class="tags">
+        {% comment %}
+            优先使用 _config.yml 的 featured-tags-order 策展顺序；
+            只渲染真实存在文章的标签，不会生成空分类。
+            未配置时回退到原有的 featured-condition-size 阈值逻辑。
+        {% endcomment %}
+        {% if site.featured-tags-order %}
+            {% for tag in site.featured-tags-order %}{% if site.tags[tag] %}
+                <a href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}"
+                    title="{{ tag }}"
+                    rel="{{ site.tags[tag].size }}">{{ tag }}</a>
+            {% endif %}{% endfor %}
+        {% else %}
         {% capture tags %}
         {% comment %}
             there must be no space between for and if otherwise this tricky sort won't work.
@@ -23,6 +35,7 @@
         {% endif %}{% endfor %}
         {% endcapture %}
         {{ tags | split:'__SEPARATOR__' | sort }}
+        {% endif %}
     </div>
 </section>
 {% endif %}

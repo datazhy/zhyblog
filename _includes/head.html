@@ -6,16 +6,24 @@
     {% capture page_description %}{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
     <meta name="description" content="{{ page_description | strip }}">
     <meta name="keywords" content="{% if page.tags and page.tags != empty %}{{ page.tags | join: ', ' }}, {% endif %}{{ site.keyword }}">
-    <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
+    <meta name="theme-color" content="#1A1A1A">
+    {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
 
     <!-- Performance: preconnect to third-party origins -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://analytics.umami.is">
 
+    {% comment %}
+      页面标题规则：文章页「文章标题｜张航宇的博客」，首页/站点级页面用 SEOTitle。
+      社交封面：文章可用 front matter 的 cover 指定，缺省回退到站点头像。
+    {% endcomment %}
+    {% capture page_title %}{% if page.title %}{{ page.title }}｜{{ site.brandName }}{% else %}{{ site.SEOTitle }}{% endif %}{% endcapture %}
+    {% capture social_image %}{% if page.cover %}{{ page.cover | prepend: site.url }}{% elsif site.sidebar-avatar contains '://' %}{{ site.sidebar-avatar }}{% else %}{{ site.url }}/{{ site.sidebar-avatar }}{% endif %}{% endcapture %}
+    {% capture page_canonical %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+
     <!-- Open Graph -->
-    <meta property="og:title"
-        content="{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}">
+    <meta property="og:title" content="{{ page_title | strip }}">
     {% case page.layout %}
     {% when 'post' %}
     <meta property="og:type" content="article">
@@ -34,33 +42,41 @@
     <meta property="og:description"
         content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     {% endcase %}
-    <meta property="og:image" content="{% if site.sidebar-avatar contains '://' %}{{ site.sidebar-avatar }}{% else %}{{ site.url }}/{{ site.sidebar-avatar }}{% endif %}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:site_name" content="{{ site.SEOTitle }}">
+    <meta property="og:image" content="{{ social_image | strip }}">
+    <meta property="og:url" content="{{ page_canonical | strip }}">
+    <meta property="og:site_name" content="{{ site.brandName }}">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}">
+    <meta name="twitter:card" content="{% if page.cover %}summary_large_image{% else %}summary{% endif %}">
+    <meta name="twitter:title" content="{{ page_title | strip }}">
     <meta name="twitter:description" content="{{ page_description | strip }}">
-    <meta name="twitter:image" content="{% if site.sidebar-avatar contains '://' %}{{ site.sidebar-avatar }}{% else %}{{ site.url }}/{{ site.sidebar-avatar }}{% endif %}">
+    <meta name="twitter:image" content="{{ social_image | strip }}">
 
-    <!-- Structured Data (JSON-LD) -->
+    {% comment %}
+      结构化数据：站点统一用 @id 建立实体图，
+      Person(#person) 被文章的 author/publisher 以及 About 页的 ProfilePage 共同引用。
+    {% endcomment %}
     {% if page.layout == 'post' %}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}{{ page.url }}" },
+        "@id": "{{ page_canonical | strip }}#article",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page_canonical | strip }}" },
+        "url": "{{ page_canonical | strip }}",
         "headline": {{ page.title | jsonify }},
         "description": {{ page_description | strip | jsonify }},
+        "image": ["{{ social_image | strip }}"],
+        "inLanguage": "{{ page.lang | default: site.lang }}",
         "datePublished": "{{ page.date | date_to_xmlschema }}",
-        "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
-        "author": { "@type": "Person", "name": {{ page.author | default: site.title | jsonify }} },
-        "publisher": {
-            "@type": "Organization",
-            "name": {{ site.title | jsonify }},
-            "logo": { "@type": "ImageObject", "url": "{% if site.sidebar-avatar contains '://' %}{{ site.sidebar-avatar }}{% else %}{{ site.url }}/{{ site.sidebar-avatar }}{% endif %}" }
-        }{% if page.tags and page.tags != empty %},
+        "dateModified": "{{ page.updated | default: page.last_modified_at | default: page.date | date_to_xmlschema }}",
+        "author": {
+            "@type": "Person",
+            "@id": "{{ site.url }}/#person",
+            "name": {{ site.authorName | jsonify }},
+            "url": "{{ site.url }}/about/"
+        },
+        "publisher": { "@id": "{{ site.url }}/#person" }{% if page.tags and page.tags != empty %},
         "keywords": {{ page.tags | join: ', ' | jsonify }}{% endif %}
     }
     </script>
@@ -69,14 +85,60 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": {{ site.title | jsonify }},
+        "@id": "{{ site.url }}/#website",
         "url": "{{ site.url }}{{ site.baseurl }}/",
-        "description": {{ site.description | jsonify }}
+        "name": {{ site.brandName | jsonify }},
+        "alternateName": [{{ site.title | jsonify }}, {{ site.authorName | jsonify }}],
+        "description": {{ site.description | jsonify }},
+        "inLanguage": "{{ site.lang }}",
+        "publisher": { "@id": "{{ site.url }}/#person" }
     }
     </script>
     {% endif %}
 
-    <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
+    {% comment %}
+      文章面包屑：首页 > 主题入口 > 文章。
+      主题入口按标签推断，避免为没有入口页的分类生成层级。
+    {% endcomment %}
+    {% if page.layout == 'post' %}
+    {% assign crumb_name = nil %}
+    {% if page.tags contains '美股' or page.tags contains '投资复盘' or page.tags contains '交易系统' %}{% assign crumb_name = '股票交易' %}{% assign crumb_path = '/investing/' %}
+    {% endif %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "首页", "item": "{{ site.url }}/" },
+            {% if crumb_name %}{ "@type": "ListItem", "position": 2, "name": {{ crumb_name | jsonify }}, "item": "{{ site.url }}{{ crumb_path }}" },
+            { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+            {% else %}{ "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }} }
+            {% endif %}
+        ]
+    }
+    </script>
+    {% endif %}
+
+    {% comment %} About 页：ProfilePage，声明第一手观点的作者主体 {% endcomment %}
+    {% if page.profile-page %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "{{ site.url }}/about/#profile",
+        "url": "{{ site.url }}/about/",
+        "mainEntity": {
+            "@type": "Person",
+            "@id": "{{ site.url }}/#person",
+            "name": {{ site.authorName | jsonify }},
+            "alternateName": {{ site.authorAltName | jsonify }},
+            "url": "{{ site.url }}/about/"
+        }
+    }
+    </script>
+    {% endif %}
+
+    <title>{{ page_title | strip }}</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ site.baseurl }}/img/favicon.ico" sizes="32x32">
@@ -84,10 +146,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/img/logo/mark-32.png">
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/img/logo/zhy-mark.svg">
     <link rel="apple-touch-icon" href="{{ site.baseurl }}/img/logo/mark-180.png">
-    <meta name="theme-color" content="#1A1A1A">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="{{ page_canonical | strip }}">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ " /css/bootstrap.min.css" | prepend: site.baseurl }}">

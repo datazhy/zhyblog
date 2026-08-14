@@ -1,0 +1,45 @@
+{% comment %}
+  相关文章。优先级：相同 ticker(大写标签) > 相同 tag 重合度 > 无。
+  Jekyll 无法直接排序自定义分数，这里用两轮筛选近似：
+  先取共享标签最多的候选，最多输出 4 篇。
+{% endcomment %}
+
+{% assign candidates = "" | split: "" %}
+
+{% comment %} 第一轮：ticker 级(标签为全大写字母，如 SNDK) {% endcomment %}
+{% for tag in page.tags %}
+  {% assign upper = tag | upcase %}
+  {% if tag == upper and tag.size <= 5 %}
+    {% for post in site.tags[tag] %}
+      {% unless post.url == page.url %}
+        {% assign candidates = candidates | push: post %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} 第二轮：同标签补足 {% endcomment %}
+{% for tag in page.tags %}
+  {% for post in site.tags[tag] %}
+    {% unless post.url == page.url %}
+      {% assign candidates = candidates | push: post %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+
+{% assign related = candidates | uniq %}
+
+{% if related.size > 0 %}
+<div class="related-posts">
+  <hr>
+  <h4 style="letter-spacing:1px; color:#666;">相关阅读</h4>
+  <ul style="padding-left: 1.2em;">
+    {% for post in related limit: 4 %}
+    <li style="margin-bottom:.6em;">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      {% if post.subtitle %}<br><span style="color:#aaa; font-size:.9em;">{{ post.subtitle }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
