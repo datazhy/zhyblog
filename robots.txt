@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /pwa/
 
 Sitemap: https://zhanghangyu.com/sitemap.xml
