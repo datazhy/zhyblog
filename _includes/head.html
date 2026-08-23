@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     {% capture page_description %}{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
-    <meta name="description" content="{{ page_description | strip }}">
+    <meta name="description" content="{{ page_description | strip | escape }}">
     <meta name="keywords" content="{% if page.tags and page.tags != empty %}{{ page.tags | join: ', ' }}, {% endif %}{{ site.keyword }}">
     <meta name="theme-color" content="#1A1A1A">
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
@@ -27,9 +27,9 @@
     {% case page.layout %}
     {% when 'post' %}
     <meta property="og:type" content="article">
-    <meta property="og:description" content="{{ page.excerpt | strip_html | truncate:200 }}">
+    <meta property="og:description" content="{{ page_description | strip | escape }}">
     {% if page.date %}
-    <meta property="article:published_time" content="{{ page.date | date: " %Y-%m-%dT%H:%M:%SZ" }}">
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
     {% endif %}
     {% if page.author %}
     <meta property="article:author" content="{{ page.author }}">
@@ -49,7 +49,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="{% if page.cover %}summary_large_image{% else %}summary{% endif %}">
     <meta name="twitter:title" content="{{ page_title | strip }}">
-    <meta name="twitter:description" content="{{ page_description | strip }}">
+    <meta name="twitter:description" content="{{ page_description | strip | escape }}">
     <meta name="twitter:image" content="{{ social_image | strip }}">
 
     {% comment %}
@@ -183,6 +183,34 @@
 
         .navbar-custom .navbar-brand:hover .brand-mark {
             opacity: .78;
+        }
+
+        /* 数据型长文图表：桌面端适配正文，窄屏保留可读字号并横向滚动。 */
+        .post-container .post-chart {
+            margin: 28px 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .post-container .post-chart img {
+            display: block;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+        }
+
+        .post-container .post-chart figcaption {
+            margin-top: 8px;
+            color: #777;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 767px) {
+            .post-container .post-chart img,
+            .post-container .post-chart figcaption {
+                min-width: 820px;
+            }
         }
     </style>
 

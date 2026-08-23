@@ -3,7 +3,7 @@ layout:       post
 title:        "每月 2 美元，让 AI 把我关注的 X 博主推文翻译好送到飞书"
 subtitle:     "从官方 API 劝退到自建方案：一个可自托管的 X 推文监控 + 翻译 + 每日情报早报"
 description:  "官方 X API 起步价太高，于是自己写了一套：webhook 近实时抓原创推文，DeepSeek 翻译并分析，推送到飞书群，每天早上还生成一份「昨日信号」情报早报。实测月成本约 2 美元，Docker 一条命令部署，代码已开源。"
-date:         2026-08-13 12:00:00
+date:         2026-08-13 12:00:00 +0800
 author:       "Zhy"
 catalog:      true
 header-style: text

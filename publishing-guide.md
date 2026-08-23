@@ -31,7 +31,7 @@ layout:       post
 title:        "文章标题"
 subtitle:     "副标题（显示在标题下方）"
 description:  "一句话概括本文，用于搜索引擎摘要和分享卡片，建议 60-120 字"
-date:         2026-07-06 12:00:00
+date:         2026-07-06 12:00:00 +0800
 author:       "Zhy"
 catalog:      true
 header-style: text
@@ -50,7 +50,7 @@ tags:
 | `title` | 文章标题 | ✅ |
 | `subtitle` | 副标题 | 可选 |
 | `description` | 搜索引擎摘要（**对 SEO 很重要，建议填**） | 推荐 |
-| `date` | 发布时间 | ✅ |
+| `date` | 发布时间；末尾保留 `+0800`，明确为北京时间 | ✅ |
 | `author` | 作者，一般写 `"Zhy"` | 可选 |
 | `catalog` | `true` 显示右侧目录 | 可选 |
 | `tags` | 标签，每行一个 | 推荐 |

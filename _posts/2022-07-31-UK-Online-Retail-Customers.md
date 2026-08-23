@@ -3,7 +3,7 @@ layout:       post
 title:      "英国某电商如何精细划分在线零售客户群体"
 subtitle:   "How a UK E-commerce Firm Precisely Segments Its Online Retail Customers"
 description:  "基于 Kaggle 英国在线零售数据集，用 Python 做数据清洗与探索性分析，再结合 RFM 模型与 K-Means 聚类，把客户细分为高价值、重点深耕、挽留、流失等群体。"
-date:       2022-07-31 12:00:00
+date:       2022-07-31 12:00:00 +0800
 author:       "Zhy"
 catalog:      true
 header-style: text

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">MRVL 关键成交后的仓位占账户净值比例</title>
+  <desc id="desc">从 2026 年 7 月 14 日到 8 月 19 日，MRVL 仓位曾升至 41.5%，清仓后同日又升至 42.3%，随后再次清仓，重建至 7.4% 后第三次清仓。</desc>
+  <rect width="1200" height="700" fill="#ffffff"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+    <text x="72" y="58" font-size="36" font-weight="700" fill="#172033">MRVL 关键成交后的仓位路径</text>
+    <text x="72" y="94" font-size="21" fill="#64748b">仓位占账户净值比例（%NAV）· 2026-07-14—08-19 · 横轴按关键交易日等距</text>
+
+    <g transform="translate(72 112)">
+      <rect width="230" height="34" rx="17" fill="#fff7ed" stroke="#fdba74"/>
+      <circle cx="18" cy="17" r="5" fill="#c2410c"/>
+      <text x="32" y="23" font-size="17" font-weight="600" fill="#9a3412">14 个交易日内归零 3 次</text>
+    </g>
+
+    <g stroke="#e2e8f0" stroke-width="1">
+      <line x1="110" y1="520" x2="1140" y2="520"/>
+      <line x1="110" y1="450" x2="1140" y2="450"/>
+      <line x1="110" y1="380" x2="1140" y2="380"/>
+      <line x1="110" y1="310" x2="1140" y2="310"/>
+      <line x1="110" y1="240" x2="1140" y2="240"/>
+      <line x1="110" y1="170" x2="1140" y2="170"/>
+    </g>
+
+    <g font-size="18" fill="#64748b" text-anchor="end">
+      <text x="96" y="525">0</text>
+      <text x="96" y="455">10</text>
+      <text x="96" y="385">20</text>
+      <text x="96" y="315">30</text>
+      <text x="96" y="245">40</text>
+      <text x="96" y="175">50%</text>
+    </g>
+
+    <path d="M120 450.7 H215 V480.8 H310 V499 H385 V431.1 H410 V499 H435 V469.6 H500 V431.8 H530 V340.1 H600 V310.7 H680 V229.5 H760 V303.7 H845 V520 H875 V223.9 H905 V520 H990 V492.7 H1070 V468.2 H1110 V520 H1140 V520 V520 H120 Z"
+          fill="#dbeafe" fill-opacity="0.72"/>
+    <path d="M120 450.7 H215 V480.8 H310 V499 H385 V431.1 H410 V499 H435 V469.6 H500 V431.8 H530 V340.1 H600 V310.7 H680 V229.5 H760 V303.7 H845 V520 H875 V223.9 H905 V520 H990 V492.7 H1070 V468.2 H1110 V520 H1140"
+          fill="none" stroke="#2563eb" stroke-width="4" stroke-linejoin="round"/>
+
+    <g fill="#ffffff" stroke="#2563eb" stroke-width="3">
+      <circle cx="120" cy="450.7" r="5"/>
+      <circle cx="680" cy="229.5" r="6"/>
+      <circle cx="875" cy="223.9" r="6"/>
+      <circle cx="1070" cy="468.2" r="6"/>
+    </g>
+
+    <g font-size="21" font-weight="700" fill="#1e3a8a" text-anchor="middle">
+      <text x="680" y="211">41.5%</text>
+      <text x="875" y="205">42.3%</text>
+      <text x="1070" y="449">7.4%</text>
+    </g>
+
+    <g fill="#fff7ed" stroke="#c2410c" stroke-width="3">
+      <circle cx="845" cy="520" r="10"/>
+      <circle cx="905" cy="520" r="10"/>
+      <circle cx="1110" cy="520" r="10"/>
+    </g>
+    <g font-size="14" font-weight="700" fill="#9a3412" text-anchor="middle">
+      <text x="845" y="524">1</text>
+      <text x="905" y="524">2</text>
+      <text x="1110" y="524">3</text>
+    </g>
+
+    <line x1="110" y1="520" x2="1140" y2="520" stroke="#94a3b8" stroke-width="1.5"/>
+
+    <g font-size="17" fill="#64748b" text-anchor="middle">
+      <text x="120" y="552">07/14</text>
+      <text x="215" y="552">07/31</text>
+      <text x="310" y="552">08/05</text>
+      <text x="410" y="552">08/06</text>
+      <text x="515" y="552">08/07</text>
+      <text x="600" y="552">08/10</text>
+      <text x="680" y="552">08/11</text>
+      <text x="760" y="552">08/14</text>
+      <text x="875" y="552">08/17</text>
+      <text x="990" y="552">08/18</text>
+      <text x="1090" y="552">08/19</text>
+    </g>
+
+    <g font-size="17" fill="#475569">
+      <text x="110" y="605"><tspan font-weight="700" fill="#9a3412">①</tspan> 08/17 盘前卖出 80 股，仓位归零</text>
+      <text x="462" y="605"><tspan font-weight="700" fill="#9a3412">②</tspan> 同日高价买回 100 股，数小时后再次归零</text>
+      <text x="890" y="605"><tspan font-weight="700" fill="#9a3412">③</tspan> 08/19 卖出重建的 20 股</text>
+    </g>
+
+    <line x1="72" y1="634" x2="1128" y2="634" stroke="#e2e8f0"/>
+    <text x="72" y="662" font-size="16" fill="#94a3b8">来源：IBKR 成交记录与 flex_nav_daily；%NAV 按当日账户净值回溯，日内仅作近似。</text>
+  </g>
+</svg>

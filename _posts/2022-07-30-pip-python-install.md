@@ -3,7 +3,7 @@ layout:       post
 title:      "pip 安装第三方库网速慢的解决方案"
 subtitle:   "Solutions for Slow Internet Speed when Installing Third-Party Libraries with pip"
 description:  "pip 从国外源下载第三方库太慢、容易超时？换用清华、阿里云、腾讯云等国内镜像即可提速。本文给出临时使用与永久配置两种方法，并附各平台 pip 配置文件路径。"
-date:       2022-07-30 12:00:00
+date:       2022-07-30 12:00:00 +0800
 author:       "Zhy"
 catalog:      true
 header-style: text

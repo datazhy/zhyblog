@@ -155,6 +155,37 @@ def main():
             bad.append(f"{p.parent.name}: {m.group(1)[:40]}")
     check("14. 文章 title 使用统一品牌后缀", not bad, f"异常: {bad[:3]}")
 
+    # 15. Open Graph 摘要与页面 description 一致，避免标题成为 excerpt
+    bad = []
+    for p in articles:
+        t = p.read_text(encoding="utf-8")
+        desc = re.search(r'<meta name="description" content="([^"]*)"', t)
+        og = re.search(r'<meta property="og:description" content="([^"]*)"', t)
+        if not desc or not og or desc.group(1) != og.group(1):
+            bad.append(p.parent.name)
+    check("15. 文章 OG 摘要与 description 一致", not bad, f"异常: {bad[:3]}")
+
+    # 16. Open Graph 与 JSON-LD 的发布时间完全一致且显式带时区
+    bad = []
+    for p in articles:
+        t = p.read_text(encoding="utf-8")
+        og = re.search(r'<meta property="article:published_time" content="([^"]*)"', t)
+        blog = None
+        for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S):
+            try:
+                data = json.loads(block)
+                if data.get("@type") == "BlogPosting":
+                    blog = data
+                    break
+            except Exception:
+                pass
+        published = og.group(1) if og else ""
+        if (not blog or published != published.strip()
+                or published != blog.get("datePublished")
+                or not re.search(r"[+-]\d{2}:\d{2}$", published)):
+            bad.append(f"{p.parent.name}: {published!r}")
+    check("16. 文章发布时间元数据一致且带时区", not bad, f"异常: {bad[:3]}")
+
     width = max(len(n) for n, _, _ in results)
     failed = 0
     for name, ok, detail in results:

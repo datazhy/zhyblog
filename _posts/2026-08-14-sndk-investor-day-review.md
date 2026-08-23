@@ -3,7 +3,7 @@ layout:       post
 title:        "SNDK Investor Day 2026 复盘：估值重估与分批止盈"
 subtitle:     "不要试图卖在最高点——一次 SNDK 交易的完整复盘"
 description:  "2026 年 SNDK（Sandisk）Investor Day 完整复盘：分析 NBM 长期协议、AI 数据中心需求与估值框架变化，并复盘实际持仓中事件仓的分批止盈、5 分钟趋势判断和仓位管理。"
-date:         2026-08-14 12:00:00
+date:         2026-08-14 12:00:00 +0800
 author:       "Zhy"
 catalog:      true
 header-style: text
