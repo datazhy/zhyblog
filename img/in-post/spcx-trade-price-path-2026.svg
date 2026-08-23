@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">SPCX 价格走势与成交位置</title>
+<desc id="desc">SPCX 从首次买入到 2026 年 8 月 21 日的日收盘价折线；蓝色圆点表示买入价，橙色三角表示卖出价。
+</desc>
+<rect width="1200" height="650" fill="#f8fafc"/>
+<g font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+<text x="60.0" y="52.0" font-size="36" fill="#172033" font-weight="700" text-anchor="start" >SPCX 价格走势与成交位置</text>
+<text x="60.0" y="84.0" font-size="20" fill="#64748b" font-weight="400" text-anchor="start" >2026/08/03—08/21 · 15 个交易日 · 日收盘价，统一截至 08/21</text>
+<text x="1140.0" y="84.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >买入 2 次 · 卖出 2 次</text>
+<g transform="translate(60 108)">
+<line x1="0" y1="12" x2="42" y2="12" stroke="#334155" stroke-width="3.5"/>
+<text x="54.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >日收盘价</text>
+<circle cx="177.0" cy="12.0" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+<text x="197.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >买入</text>
+<polygon points="279.0,5.7 297.0,5.7 288.0,21.0" fill="#e76f51" stroke="#ffffff" stroke-width="2"/>
+<text x="309.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >卖出</text>
+</g>
+<rect x="60" y="145" width="1080" height="410" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+<line x1="145.0" y1="495.0" x2="1130.0" y2="495.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="501.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$100</text>
+<line x1="145.0" y1="429.0" x2="1130.0" y2="429.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="435.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$110</text>
+<line x1="145.0" y1="363.0" x2="1130.0" y2="363.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="369.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$120</text>
+<line x1="145.0" y1="297.0" x2="1130.0" y2="297.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="303.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$130</text>
+<line x1="145.0" y1="231.0" x2="1130.0" y2="231.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="237.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$140</text>
+<line x1="145.0" y1="165.0" x2="1130.0" y2="165.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="171.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$150</text>
+<path d="M 183.9 399.1 L 248.7 327.8 L 313.5 440.4 L 378.3 396.5 L 443.1 276.5 L 507.9 239.3 L 572.7 275.3 L 637.5 190.4 L 702.3 222.5 L 767.1 231.0 L 831.9 189.9 L 896.7 209.0 L 961.5 233.3 L 1026.3 270.6 L 1091.1 251.0" fill="none" stroke="#334155" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="183.9" y1="495.0" x2="183.9" y2="501.0" stroke="#94a3b8"/>
+<text x="183.9" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/03</text>
+<line x1="378.3" y1="495.0" x2="378.3" y2="501.0" stroke="#94a3b8"/>
+<text x="378.3" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/06</text>
+<line x1="572.7" y1="495.0" x2="572.7" y2="501.0" stroke="#94a3b8"/>
+<text x="572.7" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/11</text>
+<line x1="702.3" y1="495.0" x2="702.3" y2="501.0" stroke="#94a3b8"/>
+<text x="702.3" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/13</text>
+<line x1="896.7" y1="495.0" x2="896.7" y2="501.0" stroke="#94a3b8"/>
+<text x="896.7" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/18</text>
+<line x1="1091.1" y1="495.0" x2="1091.1" y2="501.0" stroke="#94a3b8"/>
+<text x="1091.1" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/21</text>
+<line x1="145.0" y1="495.0" x2="1130.0" y2="495.0" stroke="#94a3b8"/>
+<g><title>SPCX 买入 100 股 @ $111.28 · 08/03 10:19 ET</title><circle cx="179.4" cy="420.5" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SPCX 买入 100 股 @ $110.47 · 08/03 10:21 ET</title><circle cx="179.5" cy="425.9" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SPCX 卖出 80 股 @ $116.50 · 08/04 09:49 ET</title><polygon points="233.0,379.1 253.0,379.1 243.0,396.1" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SPCX 卖出 120 股 @ $114.65 · 08/04 17:44 ET</title><polygon points="255.6,391.3 275.6,391.3 265.6,408.3" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<text x="60.0" y="595.0" font-size="16" fill="#64748b" font-weight="400" text-anchor="start" >折线为日收盘价；拆分成交按同一决策合并，成交标记位于实际成交价。</text>
+<text x="60.0" y="622.0" font-size="16" fill="#94a3b8" font-weight="400" text-anchor="start" >来源：IBKR 成交记录；FUTU 前复权日线收盘价。</text>
+</g>
+</svg>

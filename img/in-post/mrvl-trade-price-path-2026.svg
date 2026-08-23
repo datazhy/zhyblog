@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">MRVL 价格走势与成交位置</title>
+<desc id="desc">MRVL 从首次转入到 2026 年 8 月 21 日的日收盘价折线；蓝色圆点表示买入价，橙色三角表示卖出价。
+灰色菱形表示 ACATS 转入成本。</desc>
+<rect width="1200" height="650" fill="#f8fafc"/>
+<g font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+<text x="60.0" y="52.0" font-size="36" fill="#172033" font-weight="700" text-anchor="start" >MRVL 价格走势与成交位置</text>
+<text x="60.0" y="84.0" font-size="20" fill="#64748b" font-weight="400" text-anchor="start" >2026/07/14—08/21 · 29 个交易日 · 日收盘价，统一截至 08/21</text>
+<text x="1140.0" y="84.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >买入 11 次 · 卖出 7 次</text>
+<g transform="translate(60 108)">
+<line x1="0" y1="12" x2="42" y2="12" stroke="#334155" stroke-width="3.5"/>
+<text x="54.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >日收盘价</text>
+<circle cx="177.0" cy="12.0" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+<text x="197.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >买入</text>
+<polygon points="279.0,5.7 297.0,5.7 288.0,21.0" fill="#e76f51" stroke="#ffffff" stroke-width="2"/>
+<text x="309.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >卖出</text>
+<polygon points="398.0,3.5 406.5,12.0 398.0,20.5 389.5,12.0" fill="#ffffff" stroke="#64748b" stroke-width="2.5"/>
+<text x="419.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >ACATS 转入</text>
+</g>
+<rect x="60" y="145" width="1080" height="410" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+<line x1="145.0" y1="495.0" x2="1130.0" y2="495.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="501.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$140</text>
+<line x1="145.0" y1="440.0" x2="1130.0" y2="440.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="446.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$160</text>
+<line x1="145.0" y1="385.0" x2="1130.0" y2="385.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="391.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$180</text>
+<line x1="145.0" y1="330.0" x2="1130.0" y2="330.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="336.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$200</text>
+<line x1="145.0" y1="275.0" x2="1130.0" y2="275.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="281.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$220</text>
+<line x1="145.0" y1="220.0" x2="1130.0" y2="220.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="226.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$240</text>
+<line x1="145.0" y1="165.0" x2="1130.0" y2="165.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="171.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$260</text>
+<path d="M 165.2 268.3 L 199.0 312.8 L 232.7 362.2 L 266.4 361.1 L 300.2 343.9 L 333.9 308.1 L 367.6 299.8 L 401.4 304.4 L 435.1 345.9 L 468.8 359.8 L 502.6 400.2 L 536.3 430.6 L 570.0 375.9 L 603.8 364.2 L 637.5 347.1 L 671.2 278.9 L 705.0 299.7 L 738.7 301.0 L 772.4 278.5 L 806.2 306.5 L 839.9 296.1 L 873.6 283.0 L 907.4 269.0 L 941.1 269.4 L 974.8 235.6 L 1008.6 286.0 L 1042.3 227.5 L 1076.0 189.7 L 1109.8 228.1" fill="none" stroke="#334155" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="165.2" y1="495.0" x2="165.2" y2="501.0" stroke="#94a3b8"/>
+<text x="165.2" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >07/14</text>
+<line x1="367.6" y1="495.0" x2="367.6" y2="501.0" stroke="#94a3b8"/>
+<text x="367.6" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >07/22</text>
+<line x1="536.3" y1="495.0" x2="536.3" y2="501.0" stroke="#94a3b8"/>
+<text x="536.3" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >07/29</text>
+<line x1="738.7" y1="495.0" x2="738.7" y2="501.0" stroke="#94a3b8"/>
+<text x="738.7" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/06</text>
+<line x1="907.4" y1="495.0" x2="907.4" y2="501.0" stroke="#94a3b8"/>
+<text x="907.4" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/13</text>
+<line x1="1109.8" y1="495.0" x2="1109.8" y2="501.0" stroke="#94a3b8"/>
+<text x="1109.8" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/21</text>
+<line x1="145.0" y1="495.0" x2="1130.0" y2="495.0" stroke="#94a3b8"/>
+<g><title>MRVL ACATS 转入 21 股，推定成本 $246.75</title><polygon points="165.2,191.4 175.2,201.4 165.2,211.4 155.2,201.4" fill="#ffffff" stroke="#64748b" stroke-width="2.5"/></g>
+<g><title>MRVL 卖出 7 股 @ $192.00 · 07/30 22:21 ET</title><polygon points="582.3,345.0 602.3,345.0 592.3,362.0" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 卖出 7 股 @ $214.71 · 08/05 04:45 ET</title><polygon points="687.1,282.5 707.1,282.5 697.1,299.5" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 23 股 @ $212.00 · 08/06 09:58 ET</title><circle cx="735.9" cy="297.0" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 卖出 23 股 @ $213.14 · 08/06 12:15 ET</title><polygon points="728.8,286.9 748.8,286.9 738.8,303.9" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 10 股 @ $213.50 · 08/06 12:40 ET</title><circle cx="739.3" cy="292.9" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 13 股 @ $216.77 · 08/07 07:13 ET</title><circle cx="766.4" cy="283.9" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 30 股 @ $220.82 · 08/07 09:45 ET</title><circle cx="769.4" cy="272.7" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 10 股 @ $214.43 · 08/10 13:09 ET</title><circle cx="807.4" cy="290.3" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 10 股 @ $209.56 · 08/10 20:36 ET</title><circle cx="828.4" cy="303.7" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 20 股 @ $211.00 · 08/11 00:00 ET</title><circle cx="829.4" cy="299.8" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 卖出 20 股 @ $217.86 · 08/14 11:40 ET</title><polygon points="930.4,273.9 950.4,273.9 940.4,290.9" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 卖出 80 股 @ $228.20 · 08/17 04:44 ET</title><polygon points="956.9,245.5 976.9,245.5 966.9,262.5" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 10 股 @ $237.56 · 08/17 10:50 ET</title><circle cx="973.1" cy="226.7" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 90 股 @ $239.20 · 08/17 11:08 ET</title><circle cx="973.5" cy="222.2" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 卖出 100 股 @ $235.50 · 08/17 13:22 ET</title><polygon points="966.3,225.4 986.3,225.4 976.3,242.4" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 10 股 @ $221.58 · 08/18 07:51 ET</title><circle cx="1003.0" cy="270.7" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 买入 10 股 @ $210.20 · 08/19 02:27 ET</title><circle cx="1032.9" cy="302.0" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>MRVL 卖出 20 股 @ $245.00 · 08/19 09:21 ET</title><polygon points="1027.8,199.2 1047.8,199.2 1037.8,216.2" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<text x="60.0" y="595.0" font-size="16" fill="#64748b" font-weight="400" text-anchor="start" >折线为日收盘价；拆分成交按同一决策合并，成交标记位于实际成交价。</text>
+<text x="60.0" y="622.0" font-size="16" fill="#64748b" font-weight="400" text-anchor="start" >MRVL 的菱形为 ACATS 转入，成本由 Flex 已实现盈亏反推。</text>
+<text x="1140.0" y="622.0" font-size="16" fill="#94a3b8" font-weight="400" text-anchor="end" >来源：IBKR 成交记录；FUTU 前复权日线收盘价。</text>
+</g>
+</svg>

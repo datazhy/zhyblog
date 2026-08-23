@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">SNDK 价格走势与成交位置</title>
+<desc id="desc">SNDK 从首次买入到 2026 年 8 月 21 日的日收盘价折线；蓝色圆点表示买入价，橙色三角表示卖出价。
+</desc>
+<rect width="1200" height="650" fill="#f8fafc"/>
+<g font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+<text x="60.0" y="52.0" font-size="36" fill="#172033" font-weight="700" text-anchor="start" >SNDK 价格走势与成交位置</text>
+<text x="60.0" y="84.0" font-size="20" fill="#64748b" font-weight="400" text-anchor="start" >2026/07/31—08/21 · 16 个交易日 · 日收盘价，统一截至 08/21</text>
+<text x="1140.0" y="84.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >买入 7 次 · 卖出 8 次</text>
+<g transform="translate(60 108)">
+<line x1="0" y1="12" x2="42" y2="12" stroke="#334155" stroke-width="3.5"/>
+<text x="54.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >日收盘价</text>
+<circle cx="177.0" cy="12.0" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+<text x="197.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >买入</text>
+<polygon points="279.0,5.7 297.0,5.7 288.0,21.0" fill="#e76f51" stroke="#ffffff" stroke-width="2"/>
+<text x="309.0" y="17.0" font-size="18" fill="#475569" font-weight="400" text-anchor="start" >卖出</text>
+</g>
+<rect x="60" y="145" width="1080" height="410" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+<line x1="145.0" y1="495.0" x2="1130.0" y2="495.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="501.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$1,000</text>
+<line x1="145.0" y1="429.0" x2="1130.0" y2="429.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="435.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$1,200</text>
+<line x1="145.0" y1="363.0" x2="1130.0" y2="363.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="369.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$1,400</text>
+<line x1="145.0" y1="297.0" x2="1130.0" y2="297.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="303.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$1,600</text>
+<line x1="145.0" y1="231.0" x2="1130.0" y2="231.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="237.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$1,800</text>
+<line x1="145.0" y1="165.0" x2="1130.0" y2="165.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="133.0" y="171.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="end" >$2,000</text>
+<path d="M 181.5 424.1 L 242.3 400.0 L 303.1 353.9 L 363.9 379.3 L 424.7 409.7 L 485.5 425.0 L 546.3 416.5 L 607.1 405.6 L 667.9 381.4 L 728.7 320.7 L 789.5 283.4 L 850.3 235.3 L 911.1 288.5 L 971.9 307.3 L 1032.7 296.8 L 1093.5 298.3" fill="none" stroke="#334155" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="181.5" y1="495.0" x2="181.5" y2="501.0" stroke="#94a3b8"/>
+<text x="181.5" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >07/31</text>
+<line x1="363.9" y1="495.0" x2="363.9" y2="501.0" stroke="#94a3b8"/>
+<text x="363.9" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/05</text>
+<line x1="546.3" y1="495.0" x2="546.3" y2="501.0" stroke="#94a3b8"/>
+<text x="546.3" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/10</text>
+<line x1="728.7" y1="495.0" x2="728.7" y2="501.0" stroke="#94a3b8"/>
+<text x="728.7" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/13</text>
+<line x1="911.1" y1="495.0" x2="911.1" y2="501.0" stroke="#94a3b8"/>
+<text x="911.1" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/18</text>
+<line x1="1093.5" y1="495.0" x2="1093.5" y2="501.0" stroke="#94a3b8"/>
+<text x="1093.5" y="524.0" font-size="18" fill="#64748b" font-weight="400" text-anchor="middle" >08/21</text>
+<line x1="145.0" y1="495.0" x2="1130.0" y2="495.0" stroke="#94a3b8"/>
+<g><title>SNDK 买入 1 股 @ $1216.50 · 07/31 15:55 ET</title><circle cx="189.8" cy="423.6" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 卖出 1 股 @ $1452.01 · 08/05 03:05 ET</title><polygon points="337.4,338.8 357.4,338.8 347.4,355.8" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 买入 1 股 @ $1254.79 · 08/05 20:10 ET</title><circle cx="404.0" cy="410.9" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 买入 5 股 @ $1230.00 · 08/06 05:43 ET</title><circle cx="411.8" cy="419.1" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 买入 2 股 @ $1260.00 · 08/06 09:57 ET</title><circle cx="419.6" cy="409.2" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 卖出 5 股 @ $1282.00 · 08/06 12:04 ET</title><polygon points="414.4,394.9 434.4,394.9 424.4,411.9" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 卖出 3 股 @ $1230.76 · 08/07 09:56 ET</title><polygon points="470.4,411.8 490.4,411.8 480.4,428.8" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 买入 5 股 @ $1241.93 · 08/07 11:32 ET</title><circle cx="484.0" cy="415.2" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 卖出 5 股 @ $1195.00 · 08/10 07:22 ET</title><polygon points="525.6,423.7 545.6,423.7 535.6,440.7" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 买入 10 股 @ $1270.00 · 08/10 10:09 ET</title><circle cx="541.7" cy="405.9" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 买入 10 股 @ $1412.00 · 08/13 09:59 ET</title><circle cx="723.7" cy="359.0" r="9.5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 卖出 10 股 @ $1523.00 · 08/13 11:37 ET</title><polygon points="717.4,315.4 737.4,315.4 727.4,332.4" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 卖出 2 股 @ $1630.00 · 08/14 07:24 ET</title><polygon points="768.8,280.1 788.8,280.1 778.8,297.1" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 卖出 3 股 @ $1623.00 · 08/14 10:27 ET</title><polygon points="775.6,282.4 795.6,282.4 785.6,299.4" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<g><title>SNDK 卖出 5 股 @ $1600.00 · 08/14 10:29 ET</title><polygon points="775.7,290.0 795.7,290.0 785.7,307.0" fill="#e76f51" stroke="#ffffff" stroke-width="2"/></g>
+<text x="60.0" y="595.0" font-size="16" fill="#64748b" font-weight="400" text-anchor="start" >折线为日收盘价；拆分成交按同一决策合并，成交标记位于实际成交价。</text>
+<text x="60.0" y="622.0" font-size="16" fill="#94a3b8" font-weight="400" text-anchor="start" >来源：IBKR 成交记录；FUTU 前复权日线收盘价。</text>
+</g>
+</svg>
