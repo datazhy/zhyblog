@@ -186,6 +186,13 @@ def main():
             bad.append(f"{p.parent.name}: {published!r}")
     check("16. 文章发布时间元数据一致且带时区", not bad, f"异常: {bad[:3]}")
 
+    # 17. 链接必须能被搜索引擎正常解析，禁止 javascript: 伪链接
+    bad = []
+    for p in pages:
+        if re.search(r'''href=["']\s*javascript:''', p.read_text(encoding="utf-8"), re.I):
+            bad.append(str(p))
+    check("17. 无不可抓取 javascript: 链接", not bad, f"异常: {bad[:3]}")
+
     width = max(len(n) for n, _, _ in results)
     failed = 0
     for name, ok, detail in results:

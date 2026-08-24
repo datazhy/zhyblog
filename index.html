@@ -1,11 +1,21 @@
 ---
 layout: page
-description: "「我们的存在不是为了被世界看见  而是为了看见世界。」"
+description: "美股投资复盘、交易系统与 AI 自动化实践，记录真实交易、风险管理和技术研究。"
 ---
 
+<section class="home-intro" aria-labelledby="home-intro-title">
+    <h2 id="home-intro-title">投资研究与技术实践</h2>
+    <p>这里记录真实的美股交易复盘、仓位与风险管理、交易系统迭代，以及 AI 自动化、Python 和数据分析实践。</p>
+    <p class="home-topic-links">
+        <a href="{{ '/investing/' | prepend: site.baseurl }}">美股投资与交易复盘</a>
+        <a href="{{ '/archive/' | prepend: site.baseurl }}">查看全部文章</a>
+        <a href="{{ '/about/' | prepend: site.baseurl }}">关于作者</a>
+    </p>
+</section>
+
 {% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
+<article class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}" rel="bookmark">
         
         <h2 class="post-title">
             {{ post.title }}
@@ -16,7 +26,9 @@ description: "「我们的存在不是为了被世界看见  而是为了看见�
         </h3>
         {% endif %}
         <div class="post-content-preview">
-            {% if post.lang == 'en' %}
+            {% if post.description %}
+                {{ post.description }}
+            {% elsif post.lang == 'en' %}
                 {{ post.content | strip_html | truncate:300 }}
             {% else %}
                 {{ post.content | strip_html | truncate:200 }}
@@ -24,9 +36,10 @@ description: "「我们的存在不是为了被世界看见  而是为了看见�
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
     </p>
-</div>
+</article>
 <hr>
 {% endfor %}
 

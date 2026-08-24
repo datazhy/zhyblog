@@ -9,8 +9,25 @@
     <meta name="theme-color" content="#1A1A1A">
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
 
-    <!-- Performance: preconnect to third-party origins -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    {% comment %}
+      首屏头图由正文里的 CSS background-image 引用，浏览器发现得较晚。
+      在 head 中预加载，缩短首页和文章页的 LCP。
+    {% endcomment %}
+    {% assign hero_image = page.header-img | default: site.header-img %}
+    {% if page.layout == 'page' or page.layout == 'post' %}
+    {% unless page.header-style == 'text' %}
+    <link rel="preload" as="image" href="{{ hero_image | prepend: '/' | prepend: site.baseurl }}" fetchpriority="high">
+    {% endunless %}
+    {% endif %}
+
+    {% comment %}只有实际配置社交账号时才加载 Font Awesome。{% endcomment %}
+    {% assign load_font_awesome = false %}
+    {% if site.RSS or site.twitter_username or site.zhihu_username or site.weibo_username or site.facebook_username or site.github_username or site.linkedin_username %}
+    {% assign load_font_awesome = true %}
+    {% endif %}
+
+    <!-- Performance: preconnect only to origins used during initial rendering -->
+    {% if load_font_awesome %}<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>{% endif %}
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://analytics.umami.is">
 
@@ -185,6 +202,47 @@
             opacity: .78;
         }
 
+        /* 搜索图标改用内联 SVG，避免为两个小图标阻塞加载整套图标字体。 */
+        .search-icon svg,
+        .search-icon-close svg {
+            display: block;
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .search-icon-close {
+            border: 0;
+            background: transparent;
+            padding: 8px;
+        }
+
+        .home-intro {
+            margin: 0 0 30px;
+            padding: 22px 24px;
+            border-left: 3px solid #0085a1;
+            background: #f7f9fa;
+        }
+
+        .home-intro h2 {
+            margin: 0 0 8px;
+            font-size: 24px;
+        }
+
+        .home-intro p {
+            margin: 8px 0 0;
+        }
+
+        .home-topic-links a {
+            display: inline-block;
+            margin: 4px 16px 0 0;
+            font-weight: 600;
+        }
+
         /* 数据型长文图表：桌面端适配正文，窄屏保留可读字号并横向滚动。 */
         .post-container .post-chart {
             margin: 28px 0;
@@ -222,11 +280,11 @@
         }
     </style>
 
-    <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
+    <!-- Social icons (only when a social account is configured) -->
+    {% if load_font_awesome %}
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
         type="text/css">
+    {% endif %}
 
 
     <script async src="https://analytics.umami.is/script.js" data-website-id="88a49fd0-beaa-4766-a9ea-63de8a4bb422"></script>

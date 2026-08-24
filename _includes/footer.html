@@ -337,22 +337,26 @@
         var $searchInput = $('#search-input');
         var $body = $('body');
 
+        function closeSearch() {
+            $searchPage.removeClass('search-active').attr({ 'aria-hidden': 'true', 'inert': '' });
+            $searchOpen.find('a').attr('aria-expanded', 'false');
+            $body.removeClass('no-scroll');
+            $searchOpen.find('a').focus();
+        }
+
         $searchOpen.on('click', function (e) {
             e.preventDefault();
-            $searchPage.toggleClass('search-active');
-            var prevClasses = $body.attr('class') || '';
+            $searchPage.addClass('search-active').attr('aria-hidden', 'false').removeAttr('inert');
+            $searchOpen.find('a').attr('aria-expanded', 'true');
             setTimeout(function () {
                 $body.addClass('no-scroll');
             }, 400)
+            $searchInput.focus();
+        });
 
-            if ($searchPage.hasClass('search-active')) {
-                $searchClose.on('click', function (e) {
-                    e.preventDefault();
-                    $searchPage.removeClass('search-active');
-                    $body.attr('class', prevClasses);  // from closure 
-                });
-                $searchInput.focus();
-            }
+        $searchClose.on('click', closeSearch);
+        $(document).on('keydown', function (e) {
+            if (e.key === 'Escape' && $searchPage.hasClass('search-active')) closeSearch();
         });
     });
 </script>

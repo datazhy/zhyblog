@@ -1,15 +1,18 @@
 <!-- Search -->
-<div class="search-page">
+<div class="search-page" id="site-search" role="dialog" aria-modal="true" aria-label="搜索文章" aria-hidden="true" inert>
   <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
+    <button type="button" class="search-icon-close" aria-label="关闭搜索">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="m6 9 6 6 6-6"></path>
+      </svg>
+    </button>
   </div>
   <div class="search-main container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
+        <form role="search" onsubmit="return false;">
+          <label class="sr-only" for="search-input">搜索文章</label>
+          <input type="search" id="search-input" placeholder="$ grep..." autocomplete="off">
         </form>
         <div id="search-results" class="mini-post-list"></div>
       </div>
