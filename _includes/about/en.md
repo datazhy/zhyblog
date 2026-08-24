@@ -18,12 +18,8 @@ I'm not a licensed investment advisor, and none of this **constitutes investment
 
 I'm especially willing to write up the cases where I got the direction right but the execution wrong — or simply lost money. Those are the most useful posts for me, and I suspect for readers too.
 
-## On the use of AI
-
-Some posts use AI to help with organizing source material, cross-checking data, or editing text. **The conclusions, fact-checking and investment judgment are mine.**
-
 ## Get in touch
 
 If you disagree with something I wrote, or spot a factual error, please leave a comment under the post — I'd rather hear the counterargument than the agreement.
 
-For anything you'd rather not discuss in public — republishing permission, collaboration, or a correction you'd prefer to send privately — email me at {% include contact-email.html %}
+Email: {% include contact-email.html %}

@@ -7,13 +7,13 @@
                 {% include sns-links.html center=true %}
 
                 <p class="copyright text-muted">
-                    {% include contact-email.html %}
-                </p>
-
-                <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }}
                     <br>
                     2022 ～ {{ site.time | date: '%Y' }}
+                </p>
+
+                <p class="copyright text-muted">
+                    {% include contact-email.html %}
                 </p>
 
                 <!-- 访客计数（不蒜子/Vercount 兼容）。外层 p 保持居中；内层 container 会被脚本设为 inline 显示，
