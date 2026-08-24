@@ -1,0 +1,9 @@
+{%- comment -%}
+  联系邮箱组件。地址来源是 _config.yml 的 site.email，改一处即可全站生效。
+  可见文本用实体编码 @ 并拆成两段，mailto 由页脚脚本运行时拼接，
+  可挡掉直接正则抓 mailto: 的初级爬虫；即使脚本没跑，
+  文本仍是完整可读地址，人工照样能复制，不影响可访问性。
+{%- endcomment -%}
+{%- assign _mail_user = site.email | split: '@' | first -%}
+{%- assign _mail_host = site.email | split: '@' | last -%}
+<a class="contact-mail" data-user="{{ _mail_user }}" data-host="{{ _mail_host }}">{{ _mail_user }}<span>&#64;</span>{{ _mail_host }}</a>

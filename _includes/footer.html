@@ -7,6 +7,10 @@
                 {% include sns-links.html center=true %}
 
                 <p class="copyright text-muted">
+                    {% include contact-email.html %}
+                </p>
+
+                <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }}
                     <br>
                     2022 ～ {{ site.time | date: '%Y' }}
@@ -50,6 +54,13 @@
             if (allDone || tries > 80) clearInterval(timer);
         }, 100);
     })();
+</script>
+
+<!-- 联系邮箱：运行时拼接 mailto，避免地址以明文 mailto: 出现在源码里被爬 -->
+<script>
+    document.querySelectorAll('a.contact-mail').forEach(function (a) {
+        a.href = 'mailto:' + a.dataset.user + '@' + a.dataset.host;
+    });
 </script>
 
 <!-- jQuery -->

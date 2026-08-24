@@ -25,3 +25,5 @@ Some posts use AI to help with organizing source material, cross-checking data, 
 > Get in touch
 
 If you disagree with something I wrote, or spot a factual error, please leave a comment under the post — I'd rather hear the counterargument than the agreement.
+
+For anything you'd rather not discuss in public — republishing permission, collaboration, or a correction you'd prefer to send privately — email me at {% include contact-email.html %}
