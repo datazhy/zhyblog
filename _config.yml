@@ -34,10 +34,15 @@ exclude:
     "less",
     "node_modules",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile",
     "package.json",
+    "package-lock.json",
     "README.md",
     "README.zh.md",
     "publishing-guide.md",
+    "scripts",
   ]
 anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # All front matter dates are authored in China Standard Time.

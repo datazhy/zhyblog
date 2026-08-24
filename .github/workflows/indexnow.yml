@@ -1,0 +1,40 @@
+name: Submit changed site to IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_posts/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "*.html"
+      - "_config.yml"
+      - "robots.txt"
+      - "562ef8c097f351e75e301329edbbb775.txt"
+      - "scripts/indexnow-submit.py"
+      - ".github/workflows/indexnow.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: read
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Wait for Cloudflare Pages and notify IndexNow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          python3 scripts/indexnow-submit.py
+          --key-file 562ef8c097f351e75e301329edbbb775.txt
+          --wait-for-cloudflare

@@ -75,6 +75,10 @@ git push
 
 推送成功后，Cloudflare Pages 会自动开始构建，**约 1～2 分钟后线上生效**。
 
+Cloudflare 部署成功后，GitHub Actions 还会自动读取线上 `sitemap.xml`，通过 IndexNow
+把站内 URL 通知给 Bing 等支持该协议的搜索引擎；无需手动提交。IndexNow 负责加快
+发现与抓取，不保证最终收录，也不会向 Google 提交。
+
 ### 5. 查看效果
 
 打开 https://zhanghangyu.com 查看。
