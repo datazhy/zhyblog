@@ -212,6 +212,14 @@
                 min-width: 820px;
             }
         }
+
+        /* 页脚的版权、邮箱、访客计数是同一组站点信息，
+           主题默认给每块 30px 上边距，三行小字被拉得过散。
+           收紧到 8px 让它们读成一个整体；只作用于相邻块，
+           首块与上方的间距保持不变。 */
+        footer .copyright + .copyright {
+            margin-top: 8px;
+        }
     </style>
 
     <!-- Custom Fonts -->
