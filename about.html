@@ -10,6 +10,36 @@ nav-order: 90
 nav-title: "ABOUT"
 ---
 
+<style>
+    /* About 页小节标题的排版收敛。
+       文章页的 h2 是「大章节」规格（桌面 30px + 上方 94px 留白），
+       但本页四个小节每节只有一两段话，套用那套会喧宾夺主、节奏过重。
+       这里收到 21px 并收紧留白，让它读起来是「分节」而非「新章节」；
+       分隔细线沿用站点既有语言，保持与文章页一致。 */
+    .post-container h2 {
+        font-size: 21px;
+        font-weight: 600;
+        letter-spacing: .01em;
+        margin: 44px 0 16px;
+    }
+    .post-container h2::before {
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+    /* 标题紧跟的首段不再额外加顶距，避免与上面的 16px 叠加 */
+    .post-container h2 + p,
+    .post-container h2 + ul {
+        margin-top: 0;
+    }
+    @media screen and (max-width: 768px) {
+        .post-container h2 {
+            font-size: 19px;
+            margin: 36px 0 14px;
+        }
+        .post-container h2::before { margin-bottom: 20px; }
+    }
+</style>
+
 {% include multilingual-sel.html %}
 
 <!-- Chinese Version -->
