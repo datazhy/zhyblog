@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="segment-title segment-desc">
+  <title id="segment-title">美光 FY2026 Q3 业务部门收入结构与利润率</title>
+  <desc id="segment-desc">美光四个业务部门收入分别为 CMBU 137.69 亿美元、CDBU 115.24 亿美元、MCBU 115.21 亿美元、AEBU 46.34 亿美元。CMBU 和 CDBU 合计占总收入约 61%。四个部门毛利率分别为 83%、87%、87%、79%，营业利润率分别为 78%、83%、86%、75%。</desc>
+  <rect width="1200" height="650" fill="#f8fafc"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+    <text x="60" y="52" font-size="36" fill="#172033" font-weight="700">数据中心相关业务已占收入约 61%</text>
+    <text x="60" y="84" font-size="19" fill="#64748b">FY2026 Q3 实际值 · 收入单位：亿美元</text>
+
+    <g transform="translate(905 31)">
+      <rect x="0" y="0" width="235" height="66" rx="14" fill="#e8f0ff" stroke="#bfdbfe"/>
+      <text x="117.5" y="27" font-size="16" fill="#1d4ed8" font-weight="600" text-anchor="middle">CMBU + CDBU</text>
+      <text x="117.5" y="53" font-size="25" fill="#172033" font-weight="700" text-anchor="middle">252.93 亿 · 61.0%</text>
+    </g>
+
+    <rect x="60" y="130" width="1080" height="128" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="86" y="159" font-size="16" fill="#64748b">公司收入结构（部门披露合计 414.48 亿美元，因四舍五入与公司总营收相差 0.08 亿美元）</text>
+
+    <g>
+      <rect x="86" y="190" width="341.1" height="54" rx="8" fill="#2563eb"/>
+      <rect x="427.1" y="190" width="285.0" height="54" fill="#60a5fa"/>
+      <rect x="712.1" y="190" width="284.9" height="54" fill="#10b981"/>
+      <rect x="997.0" y="190" width="117.0" height="54" rx="8" fill="#e76f51"/>
+      <text x="256.5" y="213" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">CMBU</text>
+      <text x="256.5" y="234" font-size="15" fill="#ffffff" text-anchor="middle">33.2%</text>
+      <text x="569.6" y="213" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">CDBU</text>
+      <text x="569.6" y="234" font-size="15" fill="#ffffff" text-anchor="middle">27.8%</text>
+      <text x="854.6" y="213" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">MCBU</text>
+      <text x="854.6" y="234" font-size="15" fill="#ffffff" text-anchor="middle">27.8%</text>
+      <text x="1055.5" y="213" font-size="14" fill="#ffffff" font-weight="700" text-anchor="middle">AEBU</text>
+      <text x="1055.5" y="234" font-size="14" fill="#ffffff" text-anchor="middle">11.2%</text>
+      <path d="M86 181 V173 H712.1 V181" fill="none" stroke="#2563eb" stroke-width="2"/>
+    </g>
+
+    <!-- Department cards -->
+    <g>
+      <rect x="60" y="286" width="255" height="252" rx="16" fill="#ffffff" stroke="#bfdbfe" stroke-width="2"/>
+      <rect x="60" y="286" width="255" height="12" rx="6" fill="#2563eb"/>
+      <text x="84" y="335" font-size="22" fill="#172033" font-weight="700">CMBU</text>
+      <text x="84" y="363" font-size="16" fill="#64748b">云存储</text>
+      <text x="84" y="411" font-size="31" fill="#2563eb" font-weight="700">137.69 亿</text>
+      <line x1="84" y1="431" x2="291" y2="431" stroke="#e2e8f0"/>
+      <text x="84" y="466" font-size="16" fill="#64748b">毛利率</text>
+      <text x="291" y="466" font-size="21" fill="#172033" font-weight="700" text-anchor="end">83%</text>
+      <text x="84" y="505" font-size="16" fill="#64748b">营业利润率</text>
+      <text x="291" y="505" font-size="21" fill="#172033" font-weight="700" text-anchor="end">78%</text>
+    </g>
+
+    <g>
+      <rect x="335" y="286" width="255" height="252" rx="16" fill="#ffffff" stroke="#bfdbfe" stroke-width="2"/>
+      <rect x="335" y="286" width="255" height="12" rx="6" fill="#60a5fa"/>
+      <text x="359" y="335" font-size="22" fill="#172033" font-weight="700">CDBU</text>
+      <text x="359" y="363" font-size="16" fill="#64748b">核心数据中心</text>
+      <text x="359" y="411" font-size="31" fill="#2563eb" font-weight="700">115.24 亿</text>
+      <line x1="359" y1="431" x2="566" y2="431" stroke="#e2e8f0"/>
+      <text x="359" y="466" font-size="16" fill="#64748b">毛利率</text>
+      <text x="566" y="466" font-size="21" fill="#172033" font-weight="700" text-anchor="end">87%</text>
+      <text x="359" y="505" font-size="16" fill="#64748b">营业利润率</text>
+      <text x="566" y="505" font-size="21" fill="#172033" font-weight="700" text-anchor="end">83%</text>
+    </g>
+
+    <g>
+      <rect x="610" y="286" width="255" height="252" rx="16" fill="#ffffff" stroke="#a7f3d0" stroke-width="2"/>
+      <rect x="610" y="286" width="255" height="12" rx="6" fill="#10b981"/>
+      <text x="634" y="335" font-size="22" fill="#172033" font-weight="700">MCBU</text>
+      <text x="634" y="363" font-size="16" fill="#64748b">移动与客户端</text>
+      <text x="634" y="411" font-size="31" fill="#059669" font-weight="700">115.21 亿</text>
+      <line x1="634" y1="431" x2="841" y2="431" stroke="#e2e8f0"/>
+      <text x="634" y="466" font-size="16" fill="#64748b">毛利率</text>
+      <text x="841" y="466" font-size="21" fill="#172033" font-weight="700" text-anchor="end">87%</text>
+      <text x="634" y="505" font-size="16" fill="#64748b">营业利润率</text>
+      <text x="841" y="505" font-size="21" fill="#172033" font-weight="700" text-anchor="end">86%</text>
+    </g>
+
+    <g>
+      <rect x="885" y="286" width="255" height="252" rx="16" fill="#ffffff" stroke="#fed7aa" stroke-width="2"/>
+      <rect x="885" y="286" width="255" height="12" rx="6" fill="#e76f51"/>
+      <text x="909" y="335" font-size="22" fill="#172033" font-weight="700">AEBU</text>
+      <text x="909" y="363" font-size="16" fill="#64748b">汽车与嵌入式</text>
+      <text x="909" y="411" font-size="31" fill="#c2410c" font-weight="700">46.34 亿</text>
+      <line x1="909" y1="431" x2="1116" y2="431" stroke="#e2e8f0"/>
+      <text x="909" y="466" font-size="16" fill="#64748b">毛利率</text>
+      <text x="1116" y="466" font-size="21" fill="#172033" font-weight="700" text-anchor="end">79%</text>
+      <text x="909" y="505" font-size="16" fill="#64748b">营业利润率</text>
+      <text x="1116" y="505" font-size="21" fill="#172033" font-weight="700" text-anchor="end">75%</text>
+    </g>
+
+    <text x="60" y="584" font-size="15" fill="#64748b">注：61.0% =（CMBU 137.69 亿 + CDBU 115.24 亿）÷ 公司总营收 414.56 亿美元。</text>
+    <text x="60" y="616" font-size="14" fill="#94a3b8">来源：Micron FY2026 Q3 Earnings Deck、Prepared Remarks；作者计算。</text>
+  </g>
+</svg>

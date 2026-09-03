@@ -264,6 +264,20 @@
             line-height: 1.5;
         }
 
+        /* 窄版信息图在手机端直接缩放，不需要横向滚动。 */
+        .post-container .post-chart.post-chart--narrow img {
+            width: 100%;
+            max-width: 520px;
+            min-width: 0;
+            margin: 0 auto;
+        }
+
+        .post-container .post-chart.post-chart--narrow figcaption {
+            max-width: 520px;
+            min-width: 0;
+            margin: 8px auto 0;
+        }
+
         @media (max-width: 767px) {
             .post-container .post-chart img,
             .post-container .post-chart figcaption {

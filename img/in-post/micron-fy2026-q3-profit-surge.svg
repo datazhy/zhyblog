@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="profit-title profit-desc">
+  <title id="profit-title">美光 FY2026 Q3 收入、销售成本与毛利变化</title>
+  <desc id="profit-desc">堆叠柱比较 FQ3-25、FQ2-26、FQ3-26 的 GAAP 收入构成，以及 FQ4-26 非 GAAP 指引中值。前三个季度销售成本分别为 57.93、61.05、64.00 亿美元，毛利分别为 35.08、177.55、350.56 亿美元。FQ4 指引按 500 亿美元收入和 86% 毛利率推算毛利约 430 亿美元、销售成本约 70 亿美元。</desc>
+  <rect width="1200" height="650" fill="#f8fafc"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+    <text x="60" y="52" font-size="36" fill="#172033" font-weight="700">收入上行几乎全部转化为毛利</text>
+    <text x="60" y="84" font-size="19" fill="#64748b">前三季为 GAAP 实际值；FQ4 为 Non-GAAP 指引中值及作者推算 · 单位：亿美元</text>
+
+    <g transform="translate(60 104)" font-size="17" fill="#475569">
+      <rect x="0" y="2" width="22" height="16" rx="3" fill="#2563eb"/>
+      <text x="32" y="17">毛利</text>
+      <rect x="104" y="2" width="22" height="16" rx="3" fill="#e76f51"/>
+      <text x="136" y="17">销售成本</text>
+      <rect x="265" y="0" width="25" height="20" rx="3" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="301" y="17">指引／推算</text>
+    </g>
+
+    <rect x="74" y="145" width="1066" height="390" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+
+    <g stroke="#e2e8f0" stroke-width="1">
+      <line x1="145" y1="502" x2="1110" y2="502"/>
+      <line x1="145" y1="438" x2="1110" y2="438"/>
+      <line x1="145" y1="374" x2="1110" y2="374"/>
+      <line x1="145" y1="310" x2="1110" y2="310"/>
+      <line x1="145" y1="246" x2="1110" y2="246"/>
+      <line x1="145" y1="182" x2="1110" y2="182"/>
+    </g>
+    <g font-size="16" fill="#64748b" text-anchor="end">
+      <text x="133" y="508">0</text>
+      <text x="133" y="444">100</text>
+      <text x="133" y="380">200</text>
+      <text x="133" y="316">300</text>
+      <text x="133" y="252">400</text>
+      <text x="133" y="188">500</text>
+    </g>
+
+    <!-- FQ3-25: total 9.301, COGS 5.793, gross profit 3.508 -->
+    <g>
+      <rect x="205" y="464.9" width="150" height="37.1" rx="4" fill="#e76f51"/>
+      <rect x="205" y="442.5" width="150" height="22.4" rx="4" fill="#2563eb"/>
+      <text x="280" y="458.8" font-size="14" fill="#ffffff" font-weight="700" text-anchor="middle">毛利 35.08</text>
+      <text x="280" y="489.1" font-size="14" fill="#ffffff" font-weight="700" text-anchor="middle">成本 57.93</text>
+      <text x="280" y="431" font-size="18" fill="#172033" font-weight="700" text-anchor="middle">93.01 亿</text>
+      <text x="280" y="558" font-size="18" fill="#172033" font-weight="700" text-anchor="middle">FQ3-25</text>
+      <text x="280" y="583" font-size="16" fill="#64748b" text-anchor="middle">毛利率 37.7%</text>
+    </g>
+
+    <!-- FQ2-26: total 23.860, COGS 6.105, gross profit 17.755 -->
+    <g>
+      <rect x="430" y="462.9" width="150" height="39.1" rx="4" fill="#e76f51"/>
+      <rect x="430" y="349.3" width="150" height="113.6" rx="4" fill="#2563eb"/>
+      <text x="505" y="412" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle">毛利 177.55</text>
+      <text x="505" y="487" font-size="14" fill="#ffffff" font-weight="700" text-anchor="middle">成本 61.05</text>
+      <text x="505" y="337" font-size="18" fill="#172033" font-weight="700" text-anchor="middle">238.60 亿</text>
+      <text x="505" y="558" font-size="18" fill="#172033" font-weight="700" text-anchor="middle">FQ2-26</text>
+      <text x="505" y="583" font-size="16" fill="#64748b" text-anchor="middle">毛利率 74.4%</text>
+    </g>
+
+    <!-- FQ3-26: total 41.456, COGS 6.400, gross profit 35.056 -->
+    <g>
+      <rect x="655" y="461.0" width="150" height="41.0" rx="4" fill="#e76f51"/>
+      <rect x="655" y="236.6" width="150" height="224.4" rx="4" fill="#2563eb"/>
+      <text x="730" y="355" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">毛利 350.56</text>
+      <text x="730" y="486.5" font-size="14" fill="#ffffff" font-weight="700" text-anchor="middle">成本 64.00</text>
+      <text x="730" y="224" font-size="18" fill="#172033" font-weight="700" text-anchor="middle">414.56 亿</text>
+      <text x="730" y="558" font-size="18" fill="#172033" font-weight="700" text-anchor="middle">FQ3-26</text>
+      <text x="730" y="583" font-size="16" fill="#64748b" text-anchor="middle">毛利率 84.6%</text>
+    </g>
+
+    <!-- FQ4-26 guidance: revenue 50, GM 86%, author-estimated COGS 7 and gross profit 43 -->
+    <g>
+      <rect x="880" y="457.2" width="150" height="44.8" rx="4" fill="#f3b09e"/>
+      <rect x="880" y="182.0" width="150" height="275.2" rx="4" fill="#93b7f5"/>
+      <rect x="876" y="178" width="158" height="328" rx="7" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="955" y="325" font-size="17" fill="#172033" font-weight="700" text-anchor="middle">毛利约 430</text>
+      <text x="955" y="484" font-size="14" fill="#7c2d12" font-weight="700" text-anchor="middle">成本约 70</text>
+      <text x="955" y="166" font-size="18" fill="#172033" font-weight="700" text-anchor="middle">500.0 亿*</text>
+      <text x="955" y="558" font-size="18" fill="#172033" font-weight="700" text-anchor="middle">FQ4-26*</text>
+      <text x="955" y="583" font-size="16" fill="#64748b" text-anchor="middle">毛利率约 86%</text>
+    </g>
+
+    <line x1="145" y1="502" x2="1110" y2="502" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="60" y="615" font-size="15" fill="#64748b">* FQ4 为指引中值；毛利与销售成本按 500 亿美元收入、约 86% Non-GAAP 毛利率推算，并非公司给出的绝对金额。</text>
+    <text x="60" y="639" font-size="14" fill="#94a3b8">来源：Micron FY2026 Q3 Earnings Deck、Prepared Remarks、Form 10-Q；作者计算。</text>
+  </g>
+</svg>
