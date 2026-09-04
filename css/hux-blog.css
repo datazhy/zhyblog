@@ -1720,48 +1720,49 @@ img::-moz-selection {
     padding: 3px 9px;
   }
 }
-.navbar-custom .nav li .theme-toggle {
+.theme-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 46px;
-  margin: 15px 4px;
-  padding: 4px 9px;
-  border: 1px solid currentColor;
+  min-width: 52px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #c8c8c8;
   border-radius: 999px;
-  background: transparent;
-  color: white;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+  color: #404040;
+  font-family: inherit;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
-  line-height: 20px;
+  line-height: 1;
   text-transform: uppercase;
   cursor: pointer;
 }
-.navbar-custom .nav li .theme-toggle:hover,
-.navbar-custom .nav li .theme-toggle:focus {
+.theme-toggle:hover,
+.theme-toggle:focus {
   color: #0085a1;
-  text-decoration: none;
+  border-color: currentColor;
   outline: none;
 }
-.navbar-custom .nav li .theme-toggle:focus-visible {
+.theme-toggle:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
 .theme-icon {
   display: none;
 }
-.navbar-custom.invert .nav li .theme-toggle {
-  color: #404040;
-}
 @media only screen and (max-width: 767px) {
-  .navbar-custom .nav li .theme-toggle {
-    width: auto;
-    min-height: 0;
-    margin: 7px 15px;
-    padding: 3px 9px;
-    color: #404040;
-    line-height: 28px;
+  .theme-toggle {
+    right: 16px;
+    bottom: 16px;
+    min-width: 50px;
+    height: 38px;
   }
 }
 html[data-theme="dark"] {
@@ -1770,6 +1771,16 @@ html[data-theme="dark"] {
 html[data-theme="dark"] body {
   color: #d8dee9;
   background-color: #11161d;
+}
+html[data-theme="dark"] .theme-toggle {
+  color: #d8dee9;
+  background: rgba(24, 33, 42, 0.96);
+  border-color: #4b5968;
+}
+html[data-theme="dark"] .theme-toggle:hover,
+html[data-theme="dark"] .theme-toggle:focus {
+  color: #65b9d2;
+  border-color: currentColor;
 }
 html[data-theme="dark"] a,
 html[data-theme="dark"] .post-preview > a,
@@ -1931,6 +1942,16 @@ html[data-theme="dark"] #artalk-comment {
   html[data-theme="auto"] body {
     color: #d8dee9;
     background-color: #11161d;
+  }
+  html[data-theme="auto"] .theme-toggle {
+    color: #d8dee9;
+    background: rgba(24, 33, 42, 0.96);
+    border-color: #4b5968;
+  }
+  html[data-theme="auto"] .theme-toggle:hover,
+  html[data-theme="auto"] .theme-toggle:focus {
+    color: #65b9d2;
+    border-color: currentColor;
   }
   html[data-theme="auto"] a,
   html[data-theme="auto"] .post-preview > a,
