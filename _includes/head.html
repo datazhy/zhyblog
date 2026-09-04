@@ -11,14 +11,14 @@
         // 在样式表加载前恢复主题，避免页面先亮后暗。
         (function () {
             var key = 'zhy-theme';
-            var theme = 'auto';
+            var theme = 'light';
             try {
                 var saved = localStorage.getItem(key);
-                if (saved === 'light' || saved === 'dark' || saved === 'auto') theme = saved;
+                if (saved === 'light' || saved === 'dark') theme = saved;
+                else localStorage.setItem(key, theme);
             } catch (e) {}
 
-            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            var isDark = theme === 'dark' || (theme === 'auto' && prefersDark);
+            var isDark = theme === 'dark';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
             document.querySelector('meta[name="theme-color"]').setAttribute('content', isDark ? '#11161d' : '#ffffff');
@@ -204,7 +204,7 @@
     <link rel="stylesheet" href="{{ " /css/bootstrap.min.css" | prepend: site.baseurl }}">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ '/css/hux-blog.min.css' | prepend: site.baseurl }}?v=theme-floating-final-20260904">
+    <link rel="stylesheet" href="{{ '/css/hux-blog.min.css' | prepend: site.baseurl }}?v=theme-day-night-20260904">
 
     <!-- Custom style overrides -->
     <style>

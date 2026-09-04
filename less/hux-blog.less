@@ -1128,7 +1128,7 @@ img::-moz-selection {
   }
 }
 
-// Light / dark / system theme switcher
+// Light / dark theme switcher
 .theme-toggle {
   position: fixed;
   right: 24px;
@@ -1136,34 +1136,64 @@ img::-moz-selection {
   z-index: 90;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-width: 52px;
-  height: 40px;
-  padding: 0 12px;
-  border: 1px solid #c8c8c8;
+  justify-content: space-between;
+  width: 76px;
+  height: 42px;
+  padding: 4px 9px;
+  overflow: hidden;
+  border: 1px solid #c8d6e5;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .94);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, .16);
-  color: @gray-dark;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  line-height: 1;
-  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff3c4, #e7f0fb);
+  box-shadow: 0 4px 14px rgba(40, 61, 82, .2);
   cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 7px rgba(40, 61, 82, .24);
+    transition: transform .25s ease, background-color .25s ease;
+  }
 
   &:hover,
   &:focus {
-    color: @brand-primary;
-    border-color: currentColor;
+    border-color: #8ea9c1;
+    box-shadow: 0 5px 16px rgba(40, 61, 82, .28);
     outline: none;
   }
 
   &:focus-visible {
-    outline: 2px solid currentColor;
+    outline: 2px solid @brand-primary;
     outline-offset: 2px;
   }
+}
+
+.theme-toggle-icon {
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: color .25s ease, opacity .25s ease;
+}
+
+.theme-toggle-sun {
+  color: #e99a13;
+  stroke: currentColor;
+}
+
+.theme-toggle-moon {
+  color: #77899b;
+  stroke: currentColor;
+  opacity: .72;
 }
 
 // Keep obsolete icons hidden while cached HTML is being replaced during deploys.
@@ -1175,8 +1205,19 @@ img::-moz-selection {
   .theme-toggle {
     right: 16px;
     bottom: 16px;
-    min-width: 50px;
-    height: 38px;
+    width: 72px;
+    height: 40px;
+    padding: 4px 8px;
+
+    &::before {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .theme-toggle-icon {
+    width: 19px;
+    height: 19px;
   }
 }
 
@@ -1189,14 +1230,35 @@ img::-moz-selection {
   }
 
   .theme-toggle {
-    color: #d8dee9;
-    background: rgba(24, 33, 42, .96);
-    border-color: #4b5968;
+    border-color: #506174;
+    background: linear-gradient(90deg, #3b4652, #111923);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .42);
+
+    &::before {
+      background: #2a3949;
+      transform: translateX(36px);
+    }
 
     &:hover,
     &:focus {
-      color: #65b9d2;
-      border-color: currentColor;
+      border-color: #71869b;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, .52);
+    }
+  }
+
+  .theme-toggle-sun {
+    color: #9aa8b6;
+    opacity: .62;
+  }
+
+  .theme-toggle-moon {
+    color: #e5edff;
+    opacity: 1;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .theme-toggle::before {
+      transform: translateX(34px);
     }
   }
 
@@ -1385,21 +1447,9 @@ html[data-theme="dark"] {
   .dark-theme();
 }
 
-@media (prefers-color-scheme: dark) {
-  html[data-theme="auto"] {
-    .dark-theme();
-  }
-}
 
 @media only screen and (max-width: 767px) {
   html[data-theme="dark"] .navbar-default .navbar-collapse {
-    background: #18212a;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, .55), 0 1px 4px rgba(0, 0, 0, .7);
-  }
-}
-
-@media only screen and (max-width: 767px) and (prefers-color-scheme: dark) {
-  html[data-theme="auto"] .navbar-default .navbar-collapse {
     background: #18212a;
     box-shadow: 0 1px 6px rgba(0, 0, 0, .55), 0 1px 4px rgba(0, 0, 0, .7);
   }

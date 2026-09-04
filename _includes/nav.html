@@ -78,8 +78,16 @@
     </nav>
 
     <button type="button" class="theme-toggle" id="theme-toggle"
-        aria-label="{% if is_en %}Theme: Auto (click to switch){% else %}主题：自动（点击切换）{% endif %}" title="{% if is_en %}Theme: Auto (click to switch){% else %}主题：自动（点击切换）{% endif %}">
-        <span class="theme-toggle-label">{% if is_en %}Auto{% else %}自动{% endif %}</span>
+        aria-label="{% if is_en %}Light theme. Switch to dark{% else %}当前为亮色模式，点击切换到暗色模式{% endif %}"
+        title="{% if is_en %}Light theme. Switch to dark{% else %}当前为亮色模式，点击切换到暗色模式{% endif %}">
+        <svg class="theme-toggle-icon theme-toggle-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+        </svg>
+        <svg class="theme-toggle-icon theme-toggle-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z"></path>
+        </svg>
+        <span class="theme-toggle-label sr-only">{% if is_en %}Light{% else %}亮色{% endif %}</span>
     </button>
 
     <script>
