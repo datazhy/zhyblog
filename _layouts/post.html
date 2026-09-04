@@ -20,11 +20,6 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <!-- Multi-Lingual -->
-                {% if page.multilingual %}
-                    {% include multilingual-sel.html %}
-                {% endif %}
-
 				{{ content }}
 
                 <hr style="visibility: hidden;">
@@ -32,7 +27,7 @@ layout: default
                     {% if page.previous.url %}
                     <li class="previous">
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                        Previous<br>
+                        {% if page.lang == 'en' %}Previous{% else %}上一篇{% endif %}<br>
                         <span>{{page.previous.title}}</span>
                         </a>
                     </li>
@@ -40,7 +35,7 @@ layout: default
                     {% if page.next.url %}
                     <li class="next">
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                        Next<br>
+                        {% if page.lang == 'en' %}Next{% else %}下一篇{% endif %}<br>
                         <span>{{page.next.title}}</span>
                         </a>
                     </li>
@@ -69,7 +64,7 @@ layout: default
                 <div class="side-catalog">
                     <hr class="hidden-sm hidden-xs">
                     <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
+                        <a class="catalog-toggle" href="#">{% if page.lang == 'en' %}CATALOG{% else %}目录{% endif %}</a>
                     </h5>
                     <ul class="catalog-body"></ul>
                 </div>

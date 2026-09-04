@@ -6,7 +6,24 @@
     {% capture page_description %}{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
     <meta name="description" content="{{ page_description | strip | escape }}">
     <meta name="keywords" content="{% if page.tags and page.tags != empty %}{{ page.tags | join: ', ' }}, {% endif %}{{ site.keyword }}">
-    <meta name="theme-color" content="#1A1A1A">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+        // 在样式表加载前恢复主题，避免页面先亮后暗。
+        (function () {
+            var key = 'zhy-theme';
+            var theme = 'auto';
+            try {
+                var saved = localStorage.getItem(key);
+                if (saved === 'light' || saved === 'dark' || saved === 'auto') theme = saved;
+            } catch (e) {}
+
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var isDark = theme === 'dark' || (theme === 'auto' && prefersDark);
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', isDark ? '#11161d' : '#ffffff');
+        })();
+    </script>
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
 
     {% comment %}
@@ -35,9 +52,23 @@
       页面标题规则：文章页「文章标题｜张航宇的博客」，首页/站点级页面用 SEOTitle。
       社交封面：文章可用 front matter 的 cover 指定，缺省回退到站点头像。
     {% endcomment %}
-    {% capture page_title %}{% if page.title %}{{ page.title }}｜{{ site.brandName }}{% else %}{{ site.SEOTitle }}{% endif %}{% endcapture %}
+    {% capture page_title %}{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }}｜{% if page.lang == 'en' %}{{ site.title }}{% else %}{{ site.brandName }}{% endif %}{% elsif page.lang == 'en' %}Zhy Blog | U.S. Investing, Trading Systems and AI Automation{% else %}{{ site.SEOTitle }}{% endif %}{% endcapture %}
     {% capture social_image %}{% if page.cover %}{{ page.cover | prepend: site.url }}{% elsif site.sidebar-avatar contains '://' %}{{ site.sidebar-avatar }}{% else %}{{ site.url }}/{{ site.sidebar-avatar }}{% endif %}{% endcapture %}
     {% capture page_canonical %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+
+    <!-- Language alternates: Chinese is the default/x-default version. -->
+    <link rel="canonical" href="{{ page_canonical | strip }}">
+    {% if page.translation_url %}
+      {% if page.lang == 'en' %}
+        <link rel="alternate" hreflang="en" href="{{ page_canonical | strip }}">
+        <link rel="alternate" hreflang="zh-CN" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
+        <link rel="alternate" hreflang="x-default" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
+      {% else %}
+        <link rel="alternate" hreflang="zh-CN" href="{{ page_canonical | strip }}">
+        <link rel="alternate" hreflang="en" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
+        <link rel="alternate" hreflang="x-default" href="{{ page_canonical | strip }}">
+      {% endif %}
+    {% endif %}
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{ page_title | strip }}">
@@ -61,7 +92,7 @@
     {% endcase %}
     <meta property="og:image" content="{{ social_image | strip }}">
     <meta property="og:url" content="{{ page_canonical | strip }}">
-    <meta property="og:site_name" content="{{ site.brandName }}">
+    <meta property="og:site_name" content="{% if page.lang == 'en' %}{{ site.title }}{% else %}{{ site.brandName }}{% endif %}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="{% if page.cover %}summary_large_image{% else %}summary{% endif %}">
@@ -107,7 +138,7 @@
         "name": {{ site.brandName | jsonify }},
         "alternateName": [{{ site.title | jsonify }}, {{ site.authorName | jsonify }}],
         "description": {{ site.description | jsonify }},
-        "inLanguage": "{{ site.lang }}",
+        "inLanguage": "{{ page.lang | default: site.lang }}",
         "publisher": { "@id": "{{ site.url }}/#person" }
     }
     </script>
@@ -119,14 +150,19 @@
     {% endcomment %}
     {% if page.layout == 'post' %}
     {% assign crumb_name = nil %}
-    {% if page.tags contains '美股' or page.tags contains '投资复盘' or page.tags contains '交易系统' %}{% assign crumb_name = '股票交易' %}{% assign crumb_path = '/investing/' %}
+    {% if page.lang == 'en' %}
+      {% if page.tags contains 'U.S. Stocks' or page.tags contains 'Trade Review' or page.tags contains 'Trading System' %}{% assign crumb_name = 'Investing' %}{% assign crumb_path = '/en/investing/' %}{% endif %}
+      {% assign crumb_home_name = 'Home' %}{% assign crumb_home_path = '/en/' %}
+    {% else %}
+      {% if page.tags contains '美股' or page.tags contains '投资复盘' or page.tags contains '交易系统' %}{% assign crumb_name = '股票交易' %}{% assign crumb_path = '/investing/' %}{% endif %}
+      {% assign crumb_home_name = '首页' %}{% assign crumb_home_path = '/' %}
     {% endif %}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "首页", "item": "{{ site.url }}/" },
+            { "@type": "ListItem", "position": 1, "name": {{ crumb_home_name | jsonify }}, "item": "{{ site.url }}{{ crumb_home_path }}" },
             {% if crumb_name %}{ "@type": "ListItem", "position": 2, "name": {{ crumb_name | jsonify }}, "item": "{{ site.url }}{{ crumb_path }}" },
             { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
             {% else %}{ "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }} }
@@ -163,9 +199,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/img/logo/mark-32.png">
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/img/logo/zhy-mark.svg">
     <link rel="apple-touch-icon" href="{{ site.baseurl }}/img/logo/mark-180.png">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="{{ page_canonical | strip }}">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ " /css/bootstrap.min.css" | prepend: site.baseurl }}">

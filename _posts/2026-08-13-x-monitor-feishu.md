@@ -7,6 +7,8 @@ date:         2026-08-13 12:00:00 +0800
 author:       "Zhy"
 catalog:      true
 header-style: text
+lang:         zh-CN
+translation_url: /en/2026/08/13/x-monitor-feishu/
 cover:        /img/covers/x-monitor-feishu.png
 tags:
     - 开源

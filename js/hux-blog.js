@@ -10,6 +10,73 @@
  * Licensed under Apache 2.0 
  */
 
+// Light / dark / system theme toggle
+(function () {
+    var key = 'zhy-theme';
+    var modes = ['auto', 'light', 'dark'];
+    var isEnglish = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+    var labels = isEnglish
+        ? { auto: 'Auto', light: 'Light', dark: 'Dark' }
+        : { auto: '自动', light: '亮色', dark: '暗色' };
+    var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+    function currentTheme() {
+        var value = document.documentElement.getAttribute('data-theme');
+        return modes.indexOf(value) > -1 ? value : 'auto';
+    }
+
+    function isDark(theme) {
+        return theme === 'dark' || (theme === 'auto' && media && media.matches);
+    }
+
+    function applyTheme(theme, persist) {
+        var dark = isDark(theme);
+        var root = document.documentElement;
+        var button = document.getElementById('theme-toggle');
+        var meta = document.querySelector('meta[name="theme-color"]');
+
+        root.setAttribute('data-theme', theme);
+        root.style.colorScheme = dark ? 'dark' : 'light';
+        if (meta) meta.setAttribute('content', dark ? '#11161d' : '#ffffff');
+
+        if (button) {
+            var text = isEnglish
+                ? 'Theme: ' + labels[theme] + ' (click to switch)'
+                : '主题：' + labels[theme] + '（点击切换）';
+            button.setAttribute('aria-label', text);
+            button.setAttribute('title', text);
+            var label = button.querySelector('.theme-toggle-label');
+            if (label) label.textContent = labels[theme];
+        }
+
+        if (persist) {
+            try { localStorage.setItem(key, theme); } catch (e) {}
+        }
+    }
+
+    function initThemeToggle() {
+        var button = document.getElementById('theme-toggle');
+        applyTheme(currentTheme(), false);
+        if (!button) return;
+
+        button.addEventListener('click', function () {
+            var theme = currentTheme();
+            applyTheme(modes[(modes.indexOf(theme) + 1) % modes.length], true);
+        });
+    }
+
+    if (media) {
+        var onSystemThemeChange = function () {
+            if (currentTheme() === 'auto') applyTheme('auto', false);
+        };
+        if (media.addEventListener) media.addEventListener('change', onSystemThemeChange);
+        else if (media.addListener) media.addListener(onSystemThemeChange);
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initThemeToggle);
+    else initThemeToggle();
+})();
+
 // Tooltip Init
 // Unuse by Hux since V1.6: Titles now display by default so there is no need for tooltip
 // $(function() {

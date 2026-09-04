@@ -4,10 +4,11 @@ title: "关于我"
 description: "张航宇（Zhy），软件开发与数据分析背景的个人投资者。本站记录美股投资研究、真实交易复盘、仓位与风险管理，以及 AI 自动化与数据实践。"
 header-img: "img/bg-me-2022.jpg"
 header-mask: 0.3
-multilingual: true
+lang: zh-CN
+translation_url: /en/about/
 profile-page: true
 nav-order: 90
-nav-title: "ABOUT"
+nav-title: "关于"
 ---
 
 <style>
@@ -40,18 +41,9 @@ nav-title: "ABOUT"
     }
 </style>
 
-{% include multilingual-sel.html %}
-
-<!-- Chinese Version -->
-<div class="zh post-container">
+<div class="post-container">
     {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
     {{ about_zh | markdownify }}
-</div>
-
-<!-- English Version -->
-<div class="en post-container">
-    {% capture about_en %}{% include about/en.md %}{% endcapture %}
-    {{ about_en | markdownify }}
 </div>
 
 

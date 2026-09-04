@@ -1,0 +1,27 @@
+---
+layout: page
+title: "About Me"
+description: "Zhang Hangyu (Zhy) is an individual investor with a background in software development and data analysis. This site covers U.S. equity research, real trade reviews, risk management, AI automation, and data projects."
+header-img: "img/bg-me-2022.jpg"
+header-mask: 0.3
+profile-page: true
+lang: en
+permalink: /en/about/
+translation_url: /about/
+hide-in-nav: true
+---
+
+<style>
+    .post-container h2 { font-size: 21px; font-weight: 600; letter-spacing: .01em; margin: 44px 0 16px; }
+    .post-container h2::before { margin-top: 0; margin-bottom: 24px; }
+    .post-container h2 + p, .post-container h2 + ul { margin-top: 0; }
+    @media screen and (max-width: 768px) {
+        .post-container h2 { font-size: 19px; margin: 36px 0 14px; }
+        .post-container h2::before { margin-bottom: 20px; }
+    }
+</style>
+
+<div class="post-container">
+    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>

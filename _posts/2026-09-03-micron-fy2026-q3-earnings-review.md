@@ -8,6 +8,8 @@ author:       "Zhy"
 catalog:      true
 published:    true
 header-style: text
+lang:         zh-CN
+translation_url: /en/2026/09/03/micron-fy2026-q3-earnings-review/
 tags:
     - MU
     - 美光

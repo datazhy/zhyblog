@@ -1,0 +1,55 @@
+---
+layout: page
+title: "Investing"
+description: "U.S. equity research and real trade reviews covering semiconductors, memory, AI infrastructure, valuation frameworks, position sizing, scaling out, and trading discipline."
+permalink: /en/investing/
+header-img: "img/home-bg.jpg"
+header-mask: 0.4
+lang: en
+translation_url: /investing/
+hide-in-nav: true
+---
+
+<div class="post-container">
+  <p>This section documents my U.S. equity research, actual positions, and trade reviews.</p>
+
+  <p>After several years of doing this, I have come to believe one thing: <strong>stock selection determines how much you can make; position sizing determines whether you survive.</strong> The writing here therefore has two halves—<strong>what to own</strong> and <strong>how to trade it</strong>.</p>
+
+  <hr>
+  <h2>1. Investment Research</h2>
+  <p>My main areas of interest are:</p>
+  <ul>
+    <li><strong>Semiconductors</strong> — memory, logic, and equipment</li>
+    <li><strong>AI infrastructure</strong> — data centers, compute, and storage</li>
+    <li><strong>High-growth technology companies</strong> — changes in business models and valuation frameworks</li>
+  </ul>
+  <p>Research posts focus on company fundamentals, industry cycles, and valuation logic. I care less about a single price target than about <strong>which framework the market is using to value a company, and when that framework may change</strong>.</p>
+
+  <h2>2. Trading System</h2>
+  <p>Most losses do not come from getting the direction wrong. They come from position sizing, execution, or emotional control. This section records the <strong>method</strong>, not merely the ticker:</p>
+  <ul>
+    <li><strong>Position sizing</strong> — separating core and event-driven positions and setting single-name limits</li>
+    <li><strong>Execution</strong> — scaling in, scaling out, and why trying to sell the exact top is a mistake</li>
+    <li><strong>Trend assessment</strong> — distinguishing a real breakdown from market noise</li>
+    <li><strong>Trading discipline</strong> — writing rules and preventing exceptions in the heat of the moment</li>
+  </ul>
+  <p>I try to explain where every rule came from—the specific trade or mistake that produced it. Trading slogans detached from context are not very useful.</p>
+  <p>I am especially willing to review trades where the thesis was right but the execution was wrong. Prices expire; <strong>the reasons behind a decision do not</strong>.</p>
+
+  <hr>
+  <h2>All Investing Posts</h2>
+  {% assign en_posts = site.en_posts | sort: 'date' | reverse %}
+  <ul class="post-list-simple">
+    {% for post in en_posts %}
+      {% if post.tags contains 'U.S. Stocks' or post.tags contains 'Trade Review' or post.tags contains 'Trading System' %}
+      <li style="margin-bottom: 1.4em;">
+        <a href="{{ post.url | prepend: site.baseurl }}"><strong>{{ post.title }}</strong></a><br>
+        {% if post.subtitle %}<span style="color:#999;">{{ post.subtitle }}</span><br>{% endif %}
+        <span style="color:#bbb; font-size: 0.9em;">{{ post.date | date: "%Y-%m-%d" }}</span>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <p style="color:#999; font-size:0.92em; margin-top:2em;">The investing posts document my own research, judgment, and real trades. They are <strong>not investment advice</strong>. See <a href="{{ '/en/about/' | prepend: site.baseurl }}">About Me</a>.</p>
+</div>

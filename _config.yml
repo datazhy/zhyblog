@@ -13,6 +13,12 @@ url: "https://zhanghangyu.com" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 lang: zh-CN # site language, used in <html lang="">, override per-page with `lang:` in front matter
 
+# English translations are stored as a separate collection so the Chinese posts
+# remain the canonical/default version at their existing URLs.
+collections:
+  en_posts:
+    output: true
+
 # Publish posts or collection documents with a future date.
 future: true
 

@@ -20,7 +20,7 @@
                      未加载出来前隐藏，服务不可用则整行不显示（优雅降级） -->
                 <p class="copyright text-muted">
                     <span id="busuanzi_container_site_uv" style="display: none;">
-                        👀 你是第 <span id="busuanzi_value_site_uv"></span> 位访客 · 本站累计访问 <span id="busuanzi_value_site_pv"></span> 次
+                        {% if page.lang == 'en' %}👀 Visitor <span id="busuanzi_value_site_uv"></span> · <span id="busuanzi_value_site_pv"></span> total page views{% else %}👀 你是第 <span id="busuanzi_value_site_uv"></span> 位访客 · 本站累计访问 <span id="busuanzi_value_site_pv"></span> 次{% endif %}
                     </span>
                 </p>
             </div>
@@ -314,9 +314,9 @@
     SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('search-results'),
-        json: '/search.json',
+        json: {% if page.lang == 'en' %}'/en/search.json'{% else %}'/search.json'{% endif %},
         searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
-        noResultsText: 'No results',
+        noResultsText: {% if page.lang == 'en' %}'No results'{% else %}'没有找到相关文章'{% endif %},
         limit: 50,
         fuzzy: false,
         // a hack to get escaped subtitle unescaped. for some reason,

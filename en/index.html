@@ -1,0 +1,38 @@
+---
+layout: page
+lang: en
+title: "Zhy Blog"
+seo_title: "Zhy Blog | U.S. Stock Research, Trading Systems & AI Automation"
+description: "U.S. equity research, real trade reviews, trading systems, AI automation, Python, and data analysis."
+permalink: /en/
+translation_url: /
+hide-in-nav: true
+---
+
+<section class="home-intro" aria-labelledby="home-intro-title">
+    <h2 id="home-intro-title">Investment Research and Technical Practice</h2>
+    <p>I write about real U.S. stock trades, position sizing and risk management, trading-system development, AI automation, Python, and data analysis.</p>
+    <p class="home-topic-links">
+        <a href="{{ '/en/investing/' | prepend: site.baseurl }}">U.S. Investing and Trade Reviews</a>
+        <a href="{{ '/en/archive/' | prepend: site.baseurl }}">Browse All Posts</a>
+        <a href="{{ '/en/about/' | prepend: site.baseurl }}">About the Author</a>
+    </p>
+</section>
+
+{% assign en_posts = site.en_posts | sort: 'date' | reverse %}
+{% for post in en_posts %}
+<article class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}" rel="bookmark">
+        <h2 class="post-title">{{ post.title }}</h2>
+        {% if post.subtitle %}<h3 class="post-subtitle">{{ post.subtitle }}</h3>{% endif %}
+        <div class="post-content-preview">
+            {% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | truncate:300 }}{% endif %}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+    </p>
+</article>
+<hr>
+{% endfor %}

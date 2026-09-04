@@ -1,14 +1,9 @@
 <section class="visible-md visible-lg">
   <hr>
-  <h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
+  <h5><a href="{% if page.lang == 'en' %}{{ '/en/about/' | prepend: site.baseurl }}{% else %}{{ '/about/' | prepend: site.baseurl }}{% endif %}">{% if page.lang == 'en' %}ABOUT ME{% else %}关于我{% endif %}</a></h5>
   <div class="short-about">
-    {% if site.sidebar-avatar %}
-    <img src="{{site.sidebar-avatar}}" />
-    {% endif %}
-    {% if site.sidebar-about-description %}
-    <p>{{site.sidebar-about-description}}</p>
-    {% endif %}
-    <!-- SNS Link -->
+    {% if site.sidebar-avatar %}<img src="{{ site.sidebar-avatar }}" alt="Zhy" />{% endif %}
+    <p>{% if page.lang == 'en' %}Stay young, stay passionate.<br>React Team @ Deloitte{% else %}{{ site.sidebar-about-description }}{% endif %}</p>
     {% include sns-links.html %}
   </div>
 </section>

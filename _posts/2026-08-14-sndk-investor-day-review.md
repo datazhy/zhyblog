@@ -7,6 +7,8 @@ date:         2026-08-14 12:00:00 +0800
 author:       "Zhy"
 catalog:      true
 header-style: text
+lang:         zh-CN
+translation_url: /en/2026/08/14/sndk-investor-day-review/
 cover:        /img/covers/sndk-investor-day-2026.png
 tags:
     - SNDK

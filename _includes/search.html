@@ -1,7 +1,8 @@
+{% assign is_en = false %}{% if page.lang == 'en' %}{% assign is_en = true %}{% endif %}
 <!-- Search -->
-<div class="search-page" id="site-search" role="dialog" aria-modal="true" aria-label="搜索文章" aria-hidden="true" inert>
+<div class="search-page" id="site-search" role="dialog" aria-modal="true" aria-label="{% if is_en %}Search posts{% else %}搜索文章{% endif %}" aria-hidden="true" inert>
   <div class="search-icon-close-container">
-    <button type="button" class="search-icon-close" aria-label="关闭搜索">
+    <button type="button" class="search-icon-close" aria-label="{% if is_en %}Close search{% else %}关闭搜索{% endif %}">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="m6 9 6 6 6-6"></path>
       </svg>
@@ -11,8 +12,8 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <form role="search" onsubmit="return false;">
-          <label class="sr-only" for="search-input">搜索文章</label>
-          <input type="search" id="search-input" placeholder="$ grep..." autocomplete="off">
+          <label class="sr-only" for="search-input">{% if is_en %}Search posts{% else %}搜索文章{% endif %}</label>
+          <input type="search" id="search-input" placeholder="{% if is_en %}Search posts...{% else %}搜索文章...{% endif %}" autocomplete="off">
         </form>
         <div id="search-results" class="mini-post-list"></div>
       </div>

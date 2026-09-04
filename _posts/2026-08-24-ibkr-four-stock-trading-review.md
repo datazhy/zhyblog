@@ -7,6 +7,8 @@ date:         2026-08-24 12:00:00 +0800
 author:       "Zhy"
 catalog:      true
 header-style: text
+lang:         zh-CN
+translation_url: /en/2026/08/24/ibkr-four-stock-trading-review/
 tags:
     - 美股
     - 投资复盘

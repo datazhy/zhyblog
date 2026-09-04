@@ -1,4 +1,13 @@
 <!-- Navigation -->
+{% assign is_en = false %}
+{% if page.lang == 'en' %}{% assign is_en = true %}{% endif %}
+{% if page.translation_url %}
+  {% assign language_url = page.translation_url %}
+{% elsif is_en %}
+  {% assign language_url = '/' %}
+{% else %}
+  {% assign language_url = '/en/' %}
+{% endif %}
 {% if page.nav-style == "invert" or page.header-style == "text" %}
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
     {% else %}
@@ -8,12 +17,12 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">{% if is_en %}Toggle navigation{% else %}展开导航{% endif %}</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand brand-logo" href="{{ site.baseurl }}/" aria-label="{{ site.title }}">
+                <a class="navbar-brand brand-logo" href="{% if is_en %}{{ site.baseurl }}/en/{% else %}{{ site.baseurl }}/{% endif %}" aria-label="{{ site.title }}">
                     <svg class="brand-mark" viewBox="0 0 150 110" role="img" aria-hidden="true" focusable="false">
                         <g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16,42 H44 L16,76 H44"/>
@@ -32,21 +41,45 @@
             <div id="huxblog_navbar">
                 <div class="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="{{ site.baseurl }}/">Home</a>
+                        {% if is_en %}
+                        <li><a href="{{ site.baseurl }}/en/">Home</a></li>
+                        <li><a href="{{ site.baseurl }}/en/investing/">Investing</a></li>
+                        <li><a href="{{ site.baseurl }}/en/archive/">Archive</a></li>
+                        <li><a href="{{ site.baseurl }}/en/about/">About</a></li>
+                        {% else %}
+                        <li><a href="{{ site.baseurl }}/">首页</a></li>
+                        <li><a href="{{ site.baseurl }}/investing/">股票交易</a></li>
+                        <li><a href="{{ site.baseurl }}/archive/">归档</a></li>
+                        <li><a href="{{ site.baseurl }}/about/">关于</a></li>
+                        {% endif %}
+                        <li class="language-toggle-item">
+                            <a class="language-toggle" href="{{ language_url | prepend: site.baseurl }}"
+                               lang="{% if is_en %}zh-CN{% else %}en{% endif %}"
+                               hreflang="{% if is_en %}zh-CN{% else %}en{% endif %}"
+                               aria-label="{% if is_en %}切换到中文{% else %}Switch to English{% endif %}"
+                               title="{% if is_en %}切换到中文{% else %}Switch to English{% endif %}">
+                                {% if is_en %}中{% else %}EN{% endif %}
+                            </a>
                         </li>
-                        {% comment %}
-                            导航顺序由 front matter 的 nav-order 控制（未设置的排在最后）；
-                            导航文案优先用 nav-title，便于导航显示英文而页面标题保持中文。
-                        {% endcomment %}
-                        {% assign nav_pages = site.pages | where_exp: "p", "p.title" | where_exp: "p", "p.hide-in-nav != true" | sort: "nav-order" %}
-                        {% for page in nav_pages %}
-                        <li>
-                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.nav-title | default: page.title }}</a>
+                        <li class="theme-toggle-item">
+                            <button type="button" class="theme-toggle" id="theme-toggle"
+                                aria-label="{% if is_en %}Theme: Auto (click to switch){% else %}主题：自动（点击切换）{% endif %}" title="{% if is_en %}Theme: Auto (click to switch){% else %}主题：自动（点击切换）{% endif %}">
+                                <svg class="theme-icon theme-icon-auto" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <rect x="3" y="4" width="18" height="13" rx="2"></rect>
+                                    <path d="M8 21h8M12 17v4"></path>
+                                </svg>
+                                <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                    <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+                                </svg>
+                                <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z"></path>
+                                </svg>
+                                <span class="theme-toggle-label">{% if is_en %}Auto{% else %}自动{% endif %}</span>
+                            </button>
                         </li>
-                        {% endfor %}
                         <li class="search-icon">
-                            <a href="#site-search" aria-label="搜索文章" aria-controls="site-search" aria-expanded="false">
+                            <a href="#site-search" aria-label="{% if is_en %}Search posts{% else %}搜索文章{% endif %}" aria-controls="site-search" aria-expanded="false">
                                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                     <circle cx="11" cy="11" r="7"></circle>
                                     <path d="m20 20-4-4"></path>

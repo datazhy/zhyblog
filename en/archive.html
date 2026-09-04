@@ -1,0 +1,51 @@
+---
+title: "Archive"
+layout: default
+description: "Every article on investment research, trading systems, AI automation, Python, and data analysis."
+header-img: "img/bg-little-universe.jpg"
+lang: en
+permalink: /en/archive/
+translation_url: /archive/
+hide-in-nav: true
+---
+
+{% include intro-header.html type='page' short=true %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {% assign en_posts = site.en_posts | sort: 'date' | reverse %}
+      <div id="tag_cloud" class="tags tags-sup js-tags">
+        <a class="tag-button--all" data-encode="">Show All <sup>{{ site.en_posts.size }}</sup></a>
+        {% assign en_tags = "" | split: "" %}
+        {% for article in site.en_posts %}{% for tag in article.tags %}{% assign en_tags = en_tags | push: tag %}{% endfor %}{% endfor %}
+        {% assign en_tags = en_tags | uniq | sort %}
+        {% for tag in en_tags %}
+          {% assign count = 0 %}{% for article in site.en_posts %}{% if article.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
+          <a data-encode="{{ tag | strip | url_encode }}" class="tag-button" title="{{ tag }}" rel="{{ count }}">{{ tag }} <sup>{{ count }}</sup></a>
+        {% endfor %}
+      </div>
+
+      <div class="mini-post-list js-result d-none">
+        {% assign current_year = "" %}
+        {% for article in en_posts %}
+          {% assign article_tags = "" %}
+          {% for tag in article.tags %}{% assign encoded_tag = tag | strip | url_encode %}{% unless forloop.first %}{% assign article_tags = article_tags | append: ',' %}{% endunless %}{% assign article_tags = article_tags | append: encoded_tag %}{% endfor %}
+          {% assign article_year = article.date | date: '%Y' %}
+          {% if article_year != current_year %}
+            {% unless forloop.first %}</section>{% endunless %}
+            <section><span class="fa listing-seperator"><span class="tag-text">{{ article_year }}</span></span>
+            {% assign current_year = article_year %}
+          {% endif %}
+          <div class="post-preview item" data-tags="{{ article_tags }}">
+            <a href="{{ article.url | prepend: site.baseurl }}">
+              <h2 class="post-title">{{ article.title }}</h2>
+              {% if article.subtitle %}<h3 class="post-subtitle">{{ article.subtitle }}</h3>{% endif %}
+            </a><hr>
+          </div>
+          {% if forloop.last %}</section>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
