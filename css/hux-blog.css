@@ -1748,6 +1748,9 @@ img::-moz-selection {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
+.theme-icon {
+  display: none;
+}
 .navbar-custom.invert .nav li .theme-toggle {
   color: #404040;
 }

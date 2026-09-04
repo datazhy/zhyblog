@@ -1160,6 +1160,11 @@ img::-moz-selection {
   }
 }
 
+// Keep obsolete icons hidden while cached HTML is being replaced during deploys.
+.theme-icon {
+  display: none;
+}
+
 .navbar-custom.invert .nav li .theme-toggle {
   color: @gray-dark;
 }
