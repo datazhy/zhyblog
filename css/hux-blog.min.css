@@ -1720,17 +1720,17 @@ img::-moz-selection {
     padding: 3px 9px;
   }
 }
-.theme-toggle {
-  display: flex;
+.navbar-custom .nav li .theme-toggle {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  width: 100%;
-  height: 40px;
-  padding: 0 15px;
-  border: 0;
+  min-width: 46px;
+  margin: 15px 4px;
+  padding: 4px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
   background: transparent;
-  color: #404040;
+  color: white;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -1738,53 +1738,27 @@ img::-moz-selection {
   text-transform: uppercase;
   cursor: pointer;
 }
-.theme-toggle:hover,
-.theme-toggle:focus {
+.navbar-custom .nav li .theme-toggle:hover,
+.navbar-custom .nav li .theme-toggle:focus {
   color: #0085a1;
+  text-decoration: none;
   outline: none;
 }
-.theme-toggle:focus-visible {
+.navbar-custom .nav li .theme-toggle:focus-visible {
   outline: 2px solid currentColor;
-  outline-offset: -4px;
-  border-radius: 6px;
+  outline-offset: 2px;
 }
-.theme-icon {
-  display: none;
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.navbar-custom.invert .nav li .theme-toggle {
+  color: #404040;
 }
-html[data-theme="auto"] .theme-icon-auto,
-html[data-theme="light"] .theme-icon-light,
-html[data-theme="dark"] .theme-icon-dark {
-  display: block;
-}
-@media only screen and (min-width: 768px) {
-  .navbar-custom .theme-toggle {
-    color: white;
-  }
-  .navbar-custom.invert .theme-toggle {
+@media only screen and (max-width: 767px) {
+  .navbar-custom .nav li .theme-toggle {
+    width: auto;
+    min-height: 0;
+    margin: 7px 15px;
+    padding: 3px 9px;
     color: #404040;
-  }
-  .theme-toggle {
-    width: 50px;
-    height: 60px;
-    padding: 20px 15px;
-  }
-  .theme-toggle-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    line-height: 28px;
   }
 }
 html[data-theme="dark"] {
@@ -2110,10 +2084,6 @@ html[data-theme="dark"] #artalk-comment {
   }
 }
 @media only screen and (max-width: 767px) {
-  .theme-toggle {
-    justify-content: flex-start;
-    min-height: 44px;
-  }
   html[data-theme="dark"] .navbar-default .navbar-collapse {
     background: #18212a;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.7);
