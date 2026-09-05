@@ -38,7 +38,7 @@ description: "美股投资复盘、交易系统与 AI 自动化实践，记录�
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} ·
+        Posted by <a href="{{ '/about/' | prepend: site.baseurl }}" rel="author">{% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}</a> ·
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
     </p>
 </article>

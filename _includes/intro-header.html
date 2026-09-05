@@ -46,7 +46,7 @@
                     <h1>{{ page.title }}</h1>
                     {% comment %} always create a h2 for keeping the margin {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
-                    <span class="meta">{% if page.lang == 'en' %}Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}{% else %}Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} · {{ page.date | date: "%Y-%m-%d" }}{% endif %}</span>
+                    <span class="meta">{% if page.lang == 'en' %}Posted by <a href="{{ '/en/about/' | prepend: site.baseurl }}" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}</a> on {{ page.date | date: "%B %-d, %Y" }}{% else %}Posted by <a href="{{ '/about/' | prepend: site.baseurl }}" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}</a> · {{ page.date | date: "%Y-%m-%d" }}{% endif %}</span>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                     <h1>{{ page.title }}</h1>
                     {% comment %} always create a h2 for keeping the margin {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}
+                    <span class="meta">Posted by <a href="{% if page.lang == 'en' %}{{ '/en/about/' | prepend: site.baseurl }}{% else %}{{ '/about/' | prepend: site.baseurl }}{% endif %}" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}</a>
                         on {{ page.date | date: "%B %-d, %Y" }}</span>
                 </div>
             </div>

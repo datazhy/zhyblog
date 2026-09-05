@@ -1131,6 +1131,9 @@ samp {
 .intro-header.style-text .page-heading .subheading {
   margin-bottom: 15px;
 }
+.intro-header.style-text .post-heading .meta a {
+  color: inherit;
+}
 .intro-header.style-text .tags a,
 .intro-header.style-text .tags .tag {
   border-color: #404040;

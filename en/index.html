@@ -30,7 +30,7 @@ hide-in-nav: true
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on
+        Posted by <a href="{{ '/en/about/' | prepend: site.baseurl }}" rel="author">{% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}</a> on
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
     </p>
 </article>
