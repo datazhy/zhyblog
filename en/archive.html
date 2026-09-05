@@ -1,6 +1,7 @@
 ---
 title: "Archive"
 layout: default
+archive-page: true
 description: "Every article on investment research, trading systems, AI automation, Python, and data analysis."
 header-img: "img/bg-little-universe.jpg"
 lang: en
@@ -26,7 +27,7 @@ hide-in-nav: true
         {% endfor %}
       </div>
 
-      <div class="mini-post-list js-result d-none">
+      <div class="mini-post-list js-result">
         {% assign current_year = "" %}
         {% for article in en_posts %}
           {% assign article_tags = "" %}
