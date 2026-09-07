@@ -8,7 +8,7 @@
             {% assign featured_en_tags = "U.S. Stocks|Trade Review|Trading System|Semiconductors|AI|Python" | split: "|" %}
             {% for tag in featured_en_tags %}
                 {% assign count = 0 %}{% for article in site.en_posts %}{% if article.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
-                {% if count > 0 %}<a href="{{ site.baseurl }}/en/archive/?tag={{ tag | url_encode }}" title="{{ tag }}" rel="{{ count }}">{{ tag }}</a>{% endif %}
+                {% if count > 0 %}<a href="{{ site.baseurl }}/en/archive/#tag={{ tag | url_encode }}" title="{{ tag }}" rel="{{ count }}">{{ tag }}</a>{% endif %}
             {% endfor %}
         </div>
     {% else %}
@@ -16,11 +16,11 @@
         <div class="tags">
             {% if site.featured-tags-order %}
                 {% for tag in site.featured-tags-order %}{% if site.tags[tag] %}
-                    <a href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}" rel="{{ site.tags[tag].size }}">{{ tag }}</a>
+                    <a href="{{ site.baseurl }}/archive/#tag={{ tag | url_encode }}" title="{{ tag }}" rel="{{ site.tags[tag].size }}">{{ tag }}</a>
                 {% endif %}{% endfor %}
             {% else %}
                 {% capture tags %}{% for tag in site.tags %}{% if tag[1].size > site.featured-condition-size %}
-                    <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}" href="{{ site.baseurl }}/archive/?tag={{ tag[0] | url_encode }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>__SEPARATOR__
+                    <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}" href="{{ site.baseurl }}/archive/#tag={{ tag[0] | url_encode }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>__SEPARATOR__
                 {% endif %}{% endfor %}{% endcapture %}
                 {{ tags | split:'__SEPARATOR__' | sort }}
             {% endif %}

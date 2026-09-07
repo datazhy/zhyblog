@@ -147,11 +147,14 @@ def main():
     # 13. offline.html 已排除出 sitemap
     check("13. offline.html 不在 sitemap", not any("offline" in u for u in locs))
 
-    # 14. 文章 title 使用统一后缀
+    # 14. 中英文文章 title 使用各自的统一后缀
     bad = []
     for p in articles:
-        m = re.search(r"<title>(.*?)</title>", p.read_text(encoding="utf-8"), re.S)
-        if m and "｜张航宇的博客" not in m.group(1):
+        text = p.read_text(encoding="utf-8")
+        m = re.search(r"<title>(.*?)</title>", text, re.S)
+        expected = ("｜Zhy Blog" if re.search(r'<html[^>]+lang="en"', text)
+                    else "｜张航宇的博客")
+        if m and expected not in m.group(1):
             bad.append(f"{p.parent.name}: {m.group(1)[:40]}")
     check("14. 文章 title 使用统一品牌后缀", not bad, f"异常: {bad[:3]}")
 
@@ -192,6 +195,22 @@ def main():
         if re.search(r'''href=["']\s*javascript:''', p.read_text(encoding="utf-8"), re.I):
             bad.append(str(p))
     check("17. 无不可抓取 javascript: 链接", not bad, f"异常: {bad[:3]}")
+
+    # 18. 标签筛选只使用 fragment，不制造可抓取的重复查询 URL
+    bad = []
+    for p in pages:
+        if re.search(r'href=["\'][^"\']*/archive/\?tag=',
+                     p.read_text(encoding="utf-8"), re.I):
+            bad.append(str(p))
+    check("18. 标签链接不制造重复查询 URL", not bad, f"异常: {bad[:3]}")
+
+    # 19. Cloudflare 对搜索索引 JSON 明确返回 noindex
+    headers = SITE / "_headers"
+    header_text = headers.read_text(encoding="utf-8") if headers.exists() else ""
+    ok = ("/search.json" in header_text
+          and "/en/search.json" in header_text
+          and len(re.findall(r"X-Robots-Tag:\s*noindex", header_text, re.I)) >= 2)
+    check("19. 搜索 JSON 配置 X-Robots-Tag", ok)
 
     width = max(len(n) for n, _, _ in results)
     failed = 0

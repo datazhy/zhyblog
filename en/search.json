@@ -1,5 +1,6 @@
 ---
 layout: null
+sitemap: false
 ---
 [
   {% assign en_posts = site.en_posts | sort: 'date' | reverse %}

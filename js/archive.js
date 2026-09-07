@@ -25,11 +25,13 @@ https://github.com/kitian616/jekyll-TeXt-theme
     return queryObj;
   }
 
-  var setUrlQuery = (function() {
-    var baseUrl =  window.location.href.split('?')[0];
-    return function(query) {
-      if (typeof query === 'string') {
-        window.history.replaceState(null, '', baseUrl + query);
+  // Tag filters are UI state, not separate documents. Store them in the URL
+  // fragment so crawlers do not discover duplicate /archive/?tag=... pages.
+  var setUrlTag = (function() {
+    var baseUrl = window.location.origin + window.location.pathname;
+    return function(tag) {
+      if (typeof tag === 'string' && tag !== '') {
+        window.history.replaceState(null, '', baseUrl + '#tag=' + tag);
       } else {
         window.history.replaceState(null, '', baseUrl);
       }
@@ -120,22 +122,29 @@ https://github.com/kitian616/jekyll-TeXt-theme
         buttonFocus(target);
         _tag = target.attr('data-encode');
         if (_tag === '' || typeof _tag !== 'string') {
-          setUrlQuery();
+          setUrlTag();
         } else {
-          setUrlQuery('?tag=' + _tag);
+          setUrlTag(_tag);
         }
       } else {
         buttonFocus(searchButtonsByTag(tag));
       }
     }
 
-    var query = queryString(), 
-        _tag = query.tag;
+    var query = queryString();
+    var hashMatch = window.location.hash.match(/^#tag=(.+)$/);
+    var _tag = hashMatch ? hashMatch[1] : query.tag;
+
+    // Keep old shared ?tag= links working, but normalize them immediately.
+    if (!hashMatch && _tag) {
+      setUrlTag(_tag);
+    }
 
     init(); 
     tagSelect(_tag);
 
-    $tags.on('click', 'a', function() {   /* only change */
+    $tags.on('click', 'a', function(event) {   /* only change */
+      event.preventDefault();
       tagSelect($(this).data('encode'), $(this));
     });
 

@@ -50,6 +50,9 @@ exclude:
     "publishing-guide.md",
     "scripts",
   ]
+# Cloudflare Pages reads this file from the build output to attach response
+# headers to non-HTML resources such as the search indexes.
+include: ["_headers"]
 anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # All front matter dates are authored in China Standard Time.
 timezone: Asia/Shanghai

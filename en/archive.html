@@ -17,13 +17,13 @@ hide-in-nav: true
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       {% assign en_posts = site.en_posts | sort: 'date' | reverse %}
       <div id="tag_cloud" class="tags tags-sup js-tags">
-        <a class="tag-button--all" data-encode="">Show All <sup>{{ site.en_posts.size }}</sup></a>
+        <a class="tag-button--all" data-encode="" href="#">Show All <sup>{{ site.en_posts.size }}</sup></a>
         {% assign en_tags = "" | split: "" %}
         {% for article in site.en_posts %}{% for tag in article.tags %}{% assign en_tags = en_tags | push: tag %}{% endfor %}{% endfor %}
         {% assign en_tags = en_tags | uniq | sort %}
         {% for tag in en_tags %}
           {% assign count = 0 %}{% for article in site.en_posts %}{% if article.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
-          <a data-encode="{{ tag | strip | url_encode }}" class="tag-button" title="{{ tag }}" rel="{{ count }}">{{ tag }} <sup>{{ count }}</sup></a>
+          <a data-encode="{{ tag | strip | url_encode }}" class="tag-button" title="{{ tag }}" href="#tag={{ tag | strip | url_encode }}" rel="{{ count }}">{{ tag }} <sup>{{ count }}</sup></a>
         {% endfor %}
       </div>
 
