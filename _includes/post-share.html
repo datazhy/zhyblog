@@ -1,0 +1,94 @@
+{% assign share_title = page.title | escape %}
+{% assign share_url = page.url | absolute_url | escape %}
+<div class="post-share"
+     data-share-title="{{ share_title }}"
+     data-share-url="{{ share_url }}"
+     data-share-success="{% if page.lang == 'en' %}Link copied{% else %}链接已复制{% endif %}"
+     data-share-failed="{% if page.lang == 'en' %}Copy failed. Please copy the address manually.{% else %}复制失败，请手动复制地址。{% endif %}">
+    <span class="post-share-label">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+        {% if page.lang == 'en' %}Share{% else %}分享{% endif %}
+    </span>
+    <button type="button" class="post-share-button post-share-button-primary" data-share-action="share">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+        <span>{% if page.lang == 'en' %}Share article{% else %}分享文章{% endif %}</span>
+    </button>
+    <button type="button" class="post-share-button" data-share-action="copy">
+        <i class="fa fa-link" aria-hidden="true"></i>
+        <span>{% if page.lang == 'en' %}Copy link{% else %}复制链接{% endif %}</span>
+    </button>
+    <span class="post-share-status" role="status" aria-live="polite"></span>
+</div>
+
+<script>
+(function () {
+    var shareBar = document.querySelector('.post-share');
+    if (!shareBar) return;
+
+    var shareUrl = shareBar.getAttribute('data-share-url') || window.location.href;
+    var shareTitle = shareBar.getAttribute('data-share-title') || document.title;
+    var successText = shareBar.getAttribute('data-share-success') || 'Link copied';
+    var failedText = shareBar.getAttribute('data-share-failed') || 'Copy failed';
+    var status = shareBar.querySelector('.post-share-status');
+    var shareButton = shareBar.querySelector('[data-share-action="share"]');
+    var copyButton = shareBar.querySelector('[data-share-action="copy"]');
+
+    function showStatus(message) {
+        if (!status) return;
+        status.textContent = message;
+        window.clearTimeout(showStatus.timer);
+        showStatus.timer = window.setTimeout(function () {
+            status.textContent = '';
+        }, 3000);
+    }
+
+    function fallbackCopy(text) {
+        var input = document.createElement('textarea');
+        input.value = text;
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        document.body.appendChild(input);
+        input.select();
+        var copied = false;
+        try {
+            copied = document.execCommand('copy');
+        } catch (error) {
+            copied = false;
+        }
+        document.body.removeChild(input);
+        return copied;
+    }
+
+    function copyLink() {
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(shareUrl)
+                .then(function () { showStatus(successText); })
+                .catch(function () { showStatus(failedText); });
+            return;
+        }
+
+        showStatus(fallbackCopy(shareUrl) ? successText : failedText);
+    }
+
+    if (shareButton) {
+        shareButton.addEventListener('click', function () {
+            if (!navigator.share) {
+                copyLink();
+                return;
+            }
+
+            navigator.share({
+                title: shareTitle,
+                text: shareTitle,
+                url: shareUrl
+            }).catch(function (error) {
+                // Closing the native share sheet is an expected, silent action.
+                if (!error || error.name !== 'AbortError') showStatus(failedText);
+            });
+        });
+    }
+
+    if (copyButton) copyButton.addEventListener('click', copyLink);
+})();
+</script>

@@ -1635,6 +1635,58 @@ img::-moz-selection {
   border-radius: 10px;
   box-shadow: 0 12px 32px rgba(20, 32, 44, 0.16);
 }
+.post-share {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin: 0 0 2.2em;
+  padding: 0.75em 0;
+  border-top: 1px solid #e8edf2;
+  border-bottom: 1px solid #e8edf2;
+}
+.post-share-label,
+.post-share-status {
+  color: #6a7886;
+  font-size: 0.9em;
+}
+.post-share-label {
+  font-weight: 600;
+  margin-right: 0.2em;
+}
+.post-share-button {
+  appearance: none;
+  border: 1px solid #cbd6df;
+  border-radius: 999px;
+  padding: 0.45em 0.85em;
+  color: #34495e;
+  background: #fff;
+  font: inherit;
+  font-size: 0.9em;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.post-share-button:hover,
+.post-share-button:focus-visible {
+  border-color: #0085a1;
+  color: #006d82;
+  box-shadow: 0 2px 8px rgba(0, 133, 161, 0.16);
+  outline: none;
+}
+.post-share-button-primary {
+  border-color: #0085a1;
+  color: #fff;
+  background: #0085a1;
+}
+.post-share-button-primary:hover,
+.post-share-button-primary:focus-visible {
+  color: #fff;
+  background: #006d82;
+}
+.post-share-status {
+  min-height: 1.3em;
+}
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
@@ -1995,6 +2047,34 @@ html[data-theme="dark"] .sidebar-container h5 a {
 }
 html[data-theme="dark"] .post-container .related-posts h4 {
   color: #aab4bf !important;
+}
+html[data-theme="dark"] .post-share {
+  border-color: #2c3540;
+}
+html[data-theme="dark"] .post-share-label,
+html[data-theme="dark"] .post-share-status {
+  color: #929eaa;
+}
+html[data-theme="dark"] .post-share-button {
+  border-color: #4d5c6c;
+  color: #d8dee9;
+  background: #18212a;
+}
+html[data-theme="dark"] .post-share-button:hover,
+html[data-theme="dark"] .post-share-button:focus-visible {
+  border-color: #65b9d2;
+  color: #65b9d2;
+  background: #202833;
+}
+html[data-theme="dark"] .post-share-button-primary {
+  border-color: #2f9ab3;
+  color: #fff;
+  background: #2f9ab3;
+}
+html[data-theme="dark"] .post-share-button-primary:hover,
+html[data-theme="dark"] .post-share-button-primary:focus-visible {
+  color: #fff;
+  background: #277f94;
 }
 html[data-theme="dark"] #artalk-comment {
   color-scheme: dark;
