@@ -1626,6 +1626,15 @@ img::-moz-selection {
   height: auto;
   margin: 1.5em auto 1.6em auto;
 }
+.post-container .post-cover {
+  margin: 0 0 2.2em;
+}
+.post-container .post-cover img {
+  width: 100%;
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(20, 32, 44, 0.16);
+}
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {

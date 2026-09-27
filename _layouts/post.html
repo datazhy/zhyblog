@@ -20,6 +20,16 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
 
+				{% if page.cover %}
+				<figure class="post-cover">
+					<img src="{{ page.cover | relative_url }}"
+					     alt="{{ page.title | escape }}｜文章封面"
+					     loading="eager"
+					     fetchpriority="high"
+					     decoding="async">
+				</figure>
+				{% endif %}
+
 				{{ content }}
 
                 <hr style="visibility: hidden;">
