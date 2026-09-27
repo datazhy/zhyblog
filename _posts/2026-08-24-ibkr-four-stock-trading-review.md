@@ -8,6 +8,7 @@ author:       "Zhy"
 catalog:      true
 header-style: text
 lang:         zh-CN
+cover:        /img/covers/ibkr-four-stock-trading-review.png
 translation_url: /en/2026/08/24/ibkr-four-stock-trading-review/
 tags:
     - 美股

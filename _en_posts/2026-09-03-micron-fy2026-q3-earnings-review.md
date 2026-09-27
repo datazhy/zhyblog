@@ -9,6 +9,7 @@ catalog:      true
 header-style: text
 lang:         en
 permalink:    /en/2026/09/03/micron-fy2026-q3-earnings-review/
+cover:        /img/covers/micron-fy2026-q3-earnings-review.png
 translation_url: /2026/09/03/micron-fy2026-q3-earnings-review/
 published:    true
 tags:

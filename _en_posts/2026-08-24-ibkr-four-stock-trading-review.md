@@ -9,6 +9,7 @@ catalog:      true
 header-style: text
 lang:         en
 permalink:    /en/2026/08/24/ibkr-four-stock-trading-review/
+cover:        /img/covers/ibkr-four-stock-trading-review.png
 translation_url: /2026/08/24/ibkr-four-stock-trading-review/
 tags:
     - U.S. Stocks
