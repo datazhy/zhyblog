@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+<title id="title">账户净值与持仓变化</title>
+<desc id="desc">IBKR 2026年8月31日至9月25日日终数据。账户净值在9月9日至16日回撤13.95%；总持仓市值占净值比在9月16日达到1.49倍。</desc>
+<rect width="1200" height="780" rx="24" fill="#f6f7f5"/>
+<g font-family="-apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Arial, sans-serif">
+<text x="78" y="53" font-size="18" font-weight="700" fill="#6b7b86">01 / ACCOUNT PATH</text>
+<text x="78" y="103" font-size="42" font-weight="700" fill="#172633">利润向上，风险曾被放大</text>
+<text x="78" y="133" font-size="21" font-weight="400" fill="#758591">8/31—9/25 · IBKR 日终账户数据</text>
+<rect x="78" y="166" width="1044" height="287" rx="25" fill="#ffffff"/>
+<rect x="78" y="472" width="1044" height="247" rx="25" fill="#ffffff"/>
+<text x="110" y="208" font-size="26" font-weight="700" fill="#1b2c37">账户净值</text>
+<text x="110" y="514" font-size="26" font-weight="700" fill="#1b2c37">总持仓市值 / 净值</text>
+<rect x="837" y="183" width="248" height="43" rx="21" fill="#fff1e8"/>
+<text x="961" y="211" font-size="20" font-weight="700" fill="#a84d2a" text-anchor="middle">最大回撤 13.95%</text>
+<rect x="913" y="487" width="174" height="43" rx="21" fill="#e4f4f1"/>
+<text x="1000" y="515" font-size="20" font-weight="700" fill="#0b786d" text-anchor="middle">最高 1.49×</text>
+<rect x="437.7" y="239" width="278.9" height="175" rx="12" fill="#fff4ee"/>
+<text x="577.1111111111111" y="259" font-size="18" font-weight="700" fill="#bc6a49" text-anchor="middle">9/9 → 9/16</text>
+<line x1="154" y1="401.8" x2="1050" y2="401.8" stroke="#e7ecec"/>
+<text x="137" y="407.7857142857143" font-size="17" font-weight="400" fill="#83919a" text-anchor="end">$53k</text>
+<line x1="154" y1="328.5" x2="1050" y2="328.5" stroke="#e7ecec"/>
+<text x="137" y="334.5" font-size="17" font-weight="400" fill="#83919a" text-anchor="end">$59k</text>
+<line x1="154" y1="255.2" x2="1050" y2="255.2" stroke="#e7ecec"/>
+<text x="137" y="261.2142857142857" font-size="17" font-weight="400" fill="#83919a" text-anchor="end">$65k</text>
+<defs><linearGradient id="navFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9d9d0" stop-opacity=".45"/><stop offset="1" stop-color="#a9d9d0" stop-opacity="0"/></linearGradient></defs>
+<polygon points="154.0,346.0 203.8,367.9 253.6,349.5 303.3,343.7 353.1,300.6 402.9,313.3 452.7,295.9 502.4,325.6 552.2,356.3 602.0,338.7 651.8,382.4 701.6,401.0 751.3,362.0 801.1,319.4 850.9,268.6 900.7,257.5 950.4,269.1 1000.2,269.0 1050.0,268.8 1050.0,414 154.0,414" fill="url(#navFill)"/>
+<polyline points="154.0,346.0 203.8,367.9 253.6,349.5 303.3,343.7 353.1,300.6 402.9,313.3 452.7,295.9 502.4,325.6 552.2,356.3 602.0,338.7 651.8,382.4 701.6,401.0 751.3,362.0 801.1,319.4 850.9,268.6 900.7,257.5 950.4,269.1 1000.2,269.0 1050.0,268.8" fill="none" stroke="#087c79" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="452.7" cy="295.9" r="7" fill="#087c79" stroke="white" stroke-width="3"/>
+<circle cx="701.6" cy="401.0" r="8" fill="#de7a50" stroke="white" stroke-width="3"/>
+<text x="452.6666666666667" y="276.88204437649995" font-size="20" font-weight="700" fill="#086f6d" text-anchor="middle">$61.7k</text>
+<text x="701.5555555555555" y="382.9972804817143" font-size="20" font-weight="700" fill="#ad5230" text-anchor="middle">$53.1k</text>
+<line x1="154" y1="671.0" x2="1050" y2="671.0" stroke="#e7ecec"/>
+<text x="137" y="677.0" font-size="17" font-weight="400" fill="#83919a" text-anchor="end">0.0×</text>
+<line x1="154" y1="631.0" x2="1050" y2="631.0" stroke="#e7ecec"/>
+<text x="137" y="637.0" font-size="17" font-weight="400" fill="#83919a" text-anchor="end">0.5×</text>
+<line x1="154" y1="591.0" x2="1050" y2="591.0" stroke="#97aaa9" stroke-dasharray="6 7"/>
+<text x="137" y="597.0" font-size="17" font-weight="400" fill="#83919a" text-anchor="end">1.0×</text>
+<line x1="154" y1="551.0" x2="1050" y2="551.0" stroke="#e7ecec"/>
+<text x="137" y="557.0" font-size="17" font-weight="400" fill="#83919a" text-anchor="end">1.5×</text>
+<rect x="591.0" y="555.3" width="71.8" height="35.7" fill="#fee5d4" opacity=".64"/>
+<rect x="640.8" y="553.0" width="71.8" height="38.0" fill="#fee5d4" opacity=".64"/>
+<rect x="690.6" y="551.9" width="71.8" height="39.1" fill="#fee5d4" opacity=".64"/>
+<rect x="740.3" y="554.1" width="71.8" height="36.9" fill="#fee5d4" opacity=".64"/>
+<rect x="790.1" y="573.9" width="71.8" height="17.1" fill="#fee5d4" opacity=".64"/>
+<polyline points="154.0,591.9 203.8,592.0 253.6,591.9 303.3,591.9 353.1,595.5 402.9,592.1 452.7,592.1 502.4,591.4 552.2,666.5 602.0,555.3 651.8,553.0 701.6,551.9 751.3,554.1 801.1,573.9 850.9,595.4 900.7,595.4 950.4,591.3 1000.2,591.3 1050.0,591.3" fill="none" stroke="#e18a4e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="701.6" cy="551.9" r="8" fill="#d77938" stroke="white" stroke-width="3"/>
+<text x="720.5555555555555" y="535.9013101250727" font-size="20" font-weight="700" fill="#b4612c">1.49×</text>
+<text x="154.0" y="705" font-size="18" font-weight="400" fill="#7c8c95" text-anchor="middle">8/31</text>
+<text x="353.1111111111111" y="705" font-size="18" font-weight="400" fill="#7c8c95" text-anchor="middle">9/4</text>
+<text x="452.6666666666667" y="705" font-size="18" font-weight="400" fill="#7c8c95" text-anchor="middle">9/9</text>
+<text x="602.0" y="705" font-size="18" font-weight="400" fill="#7c8c95" text-anchor="middle">9/14</text>
+<text x="701.5555555555555" y="705" font-size="18" font-weight="400" fill="#7c8c95" text-anchor="middle">9/16</text>
+<text x="850.8888888888889" y="705" font-size="18" font-weight="400" fill="#7c8c95" text-anchor="middle">9/21</text>
+<text x="1050.0" y="705" font-size="18" font-weight="400" fill="#7c8c95" text-anchor="middle">9/25</text>
+<text x="1120" y="759" font-size="18" font-weight="400" fill="#9aa8ae" text-anchor="end">9/28 盘前快照未纳入日终曲线</text>
+</g>
+</svg>

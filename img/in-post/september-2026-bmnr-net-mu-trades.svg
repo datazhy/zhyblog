@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1130" role="img" aria-labelledby="title desc">
+<title id="title">三笔交易的成交点与价格</title>
+<desc id="desc">BMNR、NET、MU每个小图使用自己的美元价格刻度。折线为2026年9月11日至25日常规时段的最后15分钟价格；圆点是9月14日买价，三角是卖价。</desc>
+<rect width="1200" height="1130" rx="24" fill="#f6f7f5"/>
+<g font-family="-apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Arial, sans-serif">
+<text x="78" y="54" font-size="18" font-weight="700" fill="#6b7b86">02 / THREE DECISIONS</text>
+<text x="78" y="105" font-size="40" font-weight="700" fill="#172633">同样看对方向，持仓结果各不相同</text>
+<text x="78" y="137" font-size="20" font-weight="400" fill="#758591">折线为常规时段日末价；圆点买入，三角卖出；每只股票独立刻度</text>
+<rect x="78" y="168" width="1044" height="280" rx="24" fill="#ffffff"/>
+<rect x="78" y="168" width="10" height="280" rx="5" fill="#0c8179"/>
+<text x="115" y="219" font-size="31" font-weight="700" fill="#172633">BMNR</text>
+<text x="115" y="252" font-size="20" font-weight="400" fill="#778a95">事件兑现</text>
+<text x="115" y="325" font-size="46" font-weight="700" fill="#0c8179">+12.69%</text>
+<text x="115" y="362" font-size="18" font-weight="400" fill="#6f808b">曾经历 −11.50% 浮亏</text>
+<text x="115" y="399" font-size="17" font-weight="400" fill="#374a57">买 $25.04  →  均卖 $28.22</text>
+<line x1="465" y1="387.0" x2="1040" y2="387.0" stroke="#e8eded"/>
+<text x="451" y="392.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$21.8</text>
+<line x1="465" y1="306.0" x2="1040" y2="306.0" stroke="#e8eded"/>
+<text x="451" y="311.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$25.8</text>
+<line x1="465" y1="225.0" x2="1040" y2="225.0" stroke="#e8eded"/>
+<text x="451" y="230.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$29.8</text>
+<polygon points="465.0,321.1 522.5,306.8 580.0,350.4 637.5,366.4 695.0,344.7 752.5,302.5 810.0,255.9 867.5,245.6 925.0,272.0 982.5,260.8 1040.0,270.2 1040.0,387.0 465.0,387.0" fill="#0c8179" fill-opacity=".09"/>
+<polyline points="465.0,321.1 522.5,306.8 580.0,350.4 637.5,366.4 695.0,344.7 752.5,302.5 810.0,255.9 867.5,245.6 925.0,272.0 982.5,260.8 1040.0,270.2" fill="none" stroke="#0c8179" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="522.5" cy="321.1" r="8" fill="#315dc5" stroke="white" stroke-width="3"/>
+<polygon points="810.0,261.9 801.0,279.9 819.0,279.9" fill="#e5824b" stroke="white" stroke-width="2"/>
+<polygon points="925.0,244.7 916.0,262.7 934.0,262.7" fill="#e5824b" stroke="white" stroke-width="2"/>
+<text x="522.5" y="423" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/14</text>
+<text x="752.5" y="423" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/18</text>
+<text x="810.0" y="423" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/21</text>
+<text x="1040.0" y="423" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/25</text>
+<line x1="370" y1="202" x2="370" y2="412" stroke="#e9eeee"/>
+<rect x="78" y="477" width="1044" height="280" rx="24" fill="#ffffff"/>
+<rect x="78" y="477" width="10" height="280" rx="5" fill="#315dc5"/>
+<text x="115" y="528" font-size="31" font-weight="700" fill="#172633">NET</text>
+<text x="115" y="561" font-size="20" font-weight="400" fill="#778a95">恐慌退出</text>
+<text x="115" y="634" font-size="46" font-weight="700" fill="#315dc5">−1.23%</text>
+<text x="115" y="671" font-size="18" font-weight="400" fill="#6f808b">曾有 +3.68% 浮盈</text>
+<text x="115" y="708" font-size="17" font-weight="400" fill="#374a57">买 $326.00  →  卖 $322.00</text>
+<line x1="465" y1="696.0" x2="1040" y2="696.0" stroke="#e8eded"/>
+<text x="451" y="701.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$298</text>
+<line x1="465" y1="615.0" x2="1040" y2="615.0" stroke="#e8eded"/>
+<text x="451" y="620.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$333</text>
+<line x1="465" y1="534.0" x2="1040" y2="534.0" stroke="#e8eded"/>
+<text x="451" y="539.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$368</text>
+<polygon points="465.0,675.4 522.5,620.5 580.0,627.4 637.5,633.4 695.0,611.7 752.5,635.2 810.0,571.3 867.5,568.2 925.0,569.5 982.5,554.6 1040.0,577.4 1040.0,696.0 465.0,696.0" fill="#315dc5" fill-opacity=".09"/>
+<polyline points="465.0,675.4 522.5,620.5 580.0,627.4 637.5,633.4 695.0,611.7 752.5,635.2 810.0,571.3 867.5,568.2 925.0,569.5 982.5,554.6 1040.0,577.4" fill="none" stroke="#315dc5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="522.5" cy="630.5" r="8" fill="#315dc5" stroke="white" stroke-width="3"/>
+<polygon points="752.5,629.8 743.5,647.8 761.5,647.8" fill="#e5824b" stroke="white" stroke-width="2"/>
+<text x="522.5" y="732" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/14</text>
+<text x="752.5" y="732" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/18</text>
+<text x="810.0" y="732" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/21</text>
+<text x="1040.0" y="732" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/25</text>
+<line x1="370" y1="511" x2="370" y2="721" stroke="#e9eeee"/>
+<rect x="78" y="786" width="1044" height="280" rx="24" fill="#ffffff"/>
+<rect x="78" y="786" width="10" height="280" rx="5" fill="#7b59b5"/>
+<text x="115" y="837" font-size="31" font-weight="700" fill="#172633">MU</text>
+<text x="115" y="870" font-size="20" font-weight="400" fill="#778a95">财报前退出</text>
+<text x="115" y="943" font-size="46" font-weight="700" fill="#7b59b5">+11.54%</text>
+<text x="115" y="980" font-size="18" font-weight="400" fill="#6f808b">卖价捕获约 78.5% MFE</text>
+<text x="115" y="1017" font-size="17" font-weight="400" fill="#374a57">买 $927.97  →  卖 $1,035.09</text>
+<line x1="465" y1="1005.0" x2="1040" y2="1005.0" stroke="#e8eded"/>
+<text x="451" y="1010.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$895</text>
+<line x1="465" y1="924.0" x2="1040" y2="924.0" stroke="#e8eded"/>
+<text x="451" y="929.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$1,009</text>
+<line x1="465" y1="843.0" x2="1040" y2="843.0" stroke="#e8eded"/>
+<text x="451" y="848.0" font-size="17" font-weight="400" fill="#91a0a7" text-anchor="end">$1,124</text>
+<polygon points="465.0,948.5 522.5,984.4 580.0,982.1 637.5,983.0 695.0,946.7 752.5,920.3 810.0,899.9 867.5,863.6 925.0,880.0 982.5,874.4 1040.0,872.7 1040.0,1005.0 465.0,1005.0" fill="#7b59b5" fill-opacity=".09"/>
+<polyline points="465.0,948.5 522.5,984.4 580.0,982.1 637.5,983.0 695.0,946.7 752.5,920.3 810.0,899.9 867.5,863.6 925.0,880.0 982.5,874.4 1040.0,872.7" fill="none" stroke="#7b59b5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="522.5" cy="981.8" r="8" fill="#315dc5" stroke="white" stroke-width="3"/>
+<polygon points="810.0,895.8 801.0,913.8 819.0,913.8" fill="#e5824b" stroke="white" stroke-width="2"/>
+<text x="522.5" y="1041" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/14</text>
+<text x="752.5" y="1041" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/18</text>
+<text x="810.0" y="1041" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/21</text>
+<text x="1040.0" y="1041" font-size="17" font-weight="400" fill="#8798a1" text-anchor="middle">09/25</text>
+<line x1="370" y1="820" x2="370" y2="1030" stroke="#e9eeee"/>
+<text x="80" y="1111" font-size="18" font-weight="400" fill="#94a2a9">成交标记采用 IBKR 实际价；日末折线不代表盘前盘后的完整可成交路径。</text>
+</g>
+</svg>
